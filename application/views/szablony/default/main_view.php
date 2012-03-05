@@ -1,9 +1,7 @@
-<div id="top">
-	<div id="NAGLOWEK"></div>
-	<div id="MENU">Menu nawigacyjne</div>
         <div id="TRESC">
             <div class="news_kontener">
                 <?php foreach($wpisy as $wpis): ?>
+                <div class="wpis">
                 <div class="news_tytul">
                   <h1>
                       <?=$wpis['tytul'] ?>
@@ -19,8 +17,10 @@
                         <br style="line-height:5px;"><a href="#" class="read_more">Read more</a>
                     </div>
                 </div>
+                </div>
+                <?php endforeach ?>
             </div>
-            <?php endforeach ?>
+            
           
             
             <div class="newsy_pozostale_kontener">

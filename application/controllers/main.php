@@ -15,6 +15,7 @@ class Main extends CI_Controller {
             $data['lang'] = 'pl';
             $data['wpisy'] = $this->news_model->pobierz_newsy('strona');
             $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/main_view', $data);
             $this->load->view('szablony/default/footer');
 	}
