@@ -1,0 +1,171 @@
+/* 
+    Document   : style
+    Created on : 2012-03-04, 20:04:35
+    Author     : Izuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html, body {
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+        margin: 0 auto;
+        text-align: center;
+}
+
+#top {
+	width: 780px;
+        margin: 0 auto;
+        font-family:Tahoma;
+	font-size:11px;
+	line-height:13px;
+	color:#7C7C7C;
+        text-align: left;
+}
+
+#NAGLOWEK {
+	background-color: #888;
+        height: 240px;
+        background-image: url('images/top.jpg');
+}
+
+#MENU {
+	width: 220px;
+        height: 500px;
+	float: left;
+	overflow: hidden;
+	background-color: #fff;
+        background-image: url('images/body.gif');
+        background-repeat: repeat-x;
+        padding: 10px;
+}
+
+#TRESC {
+	width: 520px;
+        min-height: 500px;
+	float: left;
+	overflow: hidden;
+	background-color: #fff;
+        background-image: url('images/body.gif');
+        background-repeat: repeat-x;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 50px;
+}
+
+#STOPKA {
+	clear: both;
+	width: 100%;
+	background-color: #888;
+        background-image: url('images/stopka.jpg');
+        background-repeat: repeat-x;
+        /*text-align: center;*/
+        height: 35px;
+        color: white; 
+        font-size: 11px; 
+        font-weight: normal;
+        padding-left: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+}
+
+#STOPKA_LOGO {
+        width: 200px;
+        height: 100%;
+        float: left;
+	overflow: hidden;
+        border-right: 2px black solid;
+}
+#STOPKA_PRAWA {
+        float: left;
+	overflow: hidden;
+        padding-left: 40px;
+}
+
+.news_kontener{
+        padding-bottom: 30px;
+}
+
+.news_tytul h1 {
+        font-family:Tahoma;
+	font-size:13px;
+	color:#7C7C7C; 
+}
+
+.news_caly {
+        width: 458px;
+        background-image: url('images/news_linia_nad.gif');
+        background-repeat: repeat-x;
+        padding-top: 8px;
+}
+
+.news_logo {
+        float: left;
+        padding-right: 10px;
+        /*overflow: hidden;*/
+}
+
+.news_tresc {
+        /*overflow: hidden;*/
+        padding-left: 10px;
+}
+
+a { 
+        text-decoration:underline; 
+        color:#8CA800}
+        a:hover{text-decoration:none;
+}
+
+.read_more { 
+        color:#020202; 
+        background:url(images/a1.gif) bottom right no-repeat; 
+        padding-right:6px; 
+        text-decoration:none; 
+        font-weight:bold; 
+        font-size:10px
+}
+.read_more:hover {
+        color:#020202; 
+        background:url(images/a1.gif) bottom right no-repeat; 
+        padding-right:6px; text-decoration:underline; 
+        font-weight:bold;
+}
+
+.newsy_pozostale_kontener {
+        width: 268px;
+        background-image: url('images/newsy_linia_nad.gif');
+        background-repeat: repeat-x;
+        margin-top: 38px;
+        padding-top: 8px;
+        padding-bottom: 35px;
+}
+
+.newsy_pozostale_caly {
+        padding-bottom: 8px;
+}
+
+.newsy_pozostale_tytul {
+        background:url(images/a1.gif) top left no-repeat;
+        background-position:0 3px;
+        padding-left:6px; 
+        font-weight:bold; 
+        color:#020202;
+}
+
+.newsy_pozostale_tytul a { 
+        color:#8CA800;
+}
+.newsy_pozostale_tytul a:hover {
+        font-weight:bold;
+}
+
+.newsy_pozostale_tresc {
+    
+}
