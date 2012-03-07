@@ -29,17 +29,6 @@
                         <div class="newsy_pozostale_tresc"><?=$wpis['wpis'] ?></div>
                     </div>
                     <?php endforeach ?>
-                    
-                    <!--<div class="newsy_pozostale_caly">
-                        <div class="newsy_pozostale_tytul">05/03/2012 - <a href="#">News nr 5</a></div>
-                        <div class="newsy_pozostale_tresc">Tresc, ble ble ble ble ble. Napiszmy co¶ wiêcej
-                        jak chocia¿by to, ¿e za m±dre to nie jest. Tutaj jeszcze troszkê naskrobie!</div>
-                    </div>
-                    <div class="newsy_pozostale_caly">
-                        <div class="newsy_pozostale_tytul">02/03/2012 - <a href="#">News nr 6</a></div>
-                        <div class="newsy_pozostale_tresc">A tutaj paragrafik o jeszcze czym¶ innym :) echh
-                        ale ¿eby by³o uczciwie, to i tutaj dajmy 3 linijki, by to sie ³adniusio komponowa³o.</div>
-                    </div>-->
                     <br style="line-height:5px;" /><a href="#" class="read_more">All news</a>
                 </div>
 

@@ -32,7 +32,7 @@
                         <tr>
                             <td><a href="#">G³ówna</a></td>
                             <td><a href="#">Szukaj</a></td>
-                            <td><a href="#">Ligi</a></td>
+                            <td><?php echo anchor('liga/index', 'Ligi') ?></td>
                             <td><a href="#">Kontakt</a></td>
                         </tr>
                     </table> 
@@ -44,7 +44,7 @@
                     <ul>
                         <li><a href="#">G³ówna</a></li>
                         <li><a href="#">O nas</a></li>
-                        <li><a href="#">Ligi</a></li>
+                        <li><?php echo anchor('liga/index', 'Ligi') ?></li>
                         <li><a href="#">Zareklamuj siê</a></li>
                         <li><a href="#">Kontakt</a></li>
                     </ul>
