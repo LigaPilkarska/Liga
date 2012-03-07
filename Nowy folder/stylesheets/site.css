@@ -1,0 +1,220 @@
+html, body {
+  background-color: #000;
+  color: #fff;
+  font-family: verdana, arial, sans-serif;
+  font-size: 12px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+ 
+  body * {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  background-image: url(/images/header.png);
+  width: 191px;
+  line-height: 30px;
+	height: 30px;
+	overflow: hidden;
+	color: #fff;
+}
+
+body {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+div#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 200px;
+	z-index: 100;
+	overflow: hidden;
+	width: 100%;
+	background-color: #000;
+}
+
+div#header #nav_buttons {
+	position: absolute;
+	top: 135px;
+	width: 970px;
+}
+
+div#header #nav_buttons a {
+	margin-right: 10px;
+}
+
+div#header a {
+	float: left;
+	display: block;
+	background-image: url(/images/red-button.png);
+	text-align: center;
+}
+
+#wrapper {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	left: 0px;
+}
+
+#content {
+	width: 990px;
+}
+
+#wrapper * {
+	z-index: 100;
+}
+
+a:hover {
+	color: #aaa;
+}
+
+.selected {
+	font-weight: bold;
+}
+
+li li a {
+	background-image: url(/images/grey-button-wide.png);
+	width: 221px;
+	color: #000;
+}
+
+a.selected, li.selected {
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+a.selected, li.selected a {
+	filter: alpha(opacity=50);						
+}
+
+li li a:hover {
+	color: #333;
+}
+
+li li.direct a {
+	background-image: url(/images/blue-button-wide.png);
+}
+
+ul#root {
+
+}
+
+ul {
+  position: absolute;
+  top: 200px;
+  left: 0;
+
+}
+
+ul ul {
+  left: 200px;
+  top: 0;
+}
+
+ul ul ul {
+	left: 230px;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
+li.list, li.text {
+  display: none;				
+}
+
+li.text {
+	position: absolute;
+	top: 0;
+	left: 230px;
+  width: 300px;		
+	display: none;			
+}
+
+.text p {
+  margin-bottom: 10px;
+}
+
+li.link {
+  display: block;
+}
+		
+li.text {
+	padding: 10px !important;
+	background-color: #48b;
+	width: 300px;
+	overflow: hidden;
+}
+
+.text * {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.text * * {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.text ul {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.text h1, h2 {
+	font-size: 12px;
+	margin-bottom: 10px !important;
+}
+
+.text h1 {
+	border-bottom: 1px solid #ccc;
+}
+
+.text h2 {
+	margin-top: 10px;
+	background-color: #269;
+	padding: 5px;
+}
+
+.text h5 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.text p, .text code, .text li {
+	text-align: left;
+}
+
+.param {
+	margin-bottom: 5px;
+}
+
+.param span {
+  font-weight: bold;
+}
+
+.text code {
+	overflow-x: auto;
+	padding: 5px;
+	background-color: #269;
+	border: 1px solid #ccc;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}

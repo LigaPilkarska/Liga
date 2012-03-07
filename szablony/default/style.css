@@ -19,9 +19,8 @@ html, body {
         margin: 0 auto;
         text-align: center;
 }
-
 #top {
-	width: 780px;
+	width: 1004px;
         margin: 0 auto;
         font-family:Tahoma;
 	font-size:11px;
@@ -29,17 +28,122 @@ html, body {
 	color:#7C7C7C;
         text-align: left;
 }
-
 #NAGLOWEK {
 	background-color: #888;
         height: 240px;
         background-image: url('images/top.jpg');
 }
+#NAGLOWEK_LOGO {
+        width: 195px;
+        height: 200px;
+        float: left;
+        padding-top: 30px;
+        padding-left: 0px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+}
+#NAGLOWEK_LOGO img {
+        width: 200px;
+        height: 200px;
+}
+#NAGLOWEK_KONTENER_PRAWO {
+        width: 750px;
+        height: 230px;
+        float: left;
+}
+#NAGLOWEK_PRAWO_TOP {
+        width: 750px;
+        color: black;
+        font-size: 13px;
+        height: 40px;
+        float: left;
+        padding-top: 22px;
+        padding-left: 30px;
+}
+#NAGLOWEK_PRAWO_TOP a, a:hover {
+        color: black;
+        font-size: 13px;
+        text-decoration: none;
+}
+#NAGLOWEK_PRAWO_TOP table td {
+        width: 88px;
+}
+#NAGLOWEK_PRAWO_MIDDLE {
+        height: 90px;
+        width: 760px;
+        float: left;
+        padding-top: 23px;
+        padding-left: 20px;
+        overflow: hidden;
+}
+#NAGLOWEK_PRAWO_BOTTOM {
+        width: 760px;
+        height: 80px;
+        float: left;
+        padding-top: 11px;
+}
+#NAGLOWEK_PRAWO_BOTTOM ul, ul li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
 
+#NAGLOWEK_PRAWO_BOTTOM ul {
+	float: left;
+	/*background-color: #fff;*/
+	padding: 1px 0 1px 1px;
+	border: 0px solid #000;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul li {
+	float: left;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul a:link, ul a:visited {
+	text-decoration: none;
+	display: block;
+	font-weight: bold;
+	background: #000 url("images/menu_poziome_tlo3.gif") repeat-x center;
+	color: black;
+	padding: 10px 20px;
+	border-right: 0px solid #fff;
+	border-right: 0px solid #fff;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul a:hover {
+        color: black;
+	background-color: green;
+	background-image: url("images/menu_poziome_tlo3.gif");
+        padding-top: 14px;
+}
+#NAGLOWEK_PRAWO_BOTTOM ul a:active {
+        color: blue;
+	background-color: green;
+	background-image: url("images/menu_poziome_tlo3.gif");
+        padding-top: 20px;
+}
+#KONTENER_BODY {
+        min-height: 500px;
+        background-color: #fff;
+        background-image: url('images/body.gif');
+        background-repeat: repeat-x;
+}
 #MENU {
 	width: 220px;
-        height: 500px;
+        min-height: 500px;
 	float: left;
+	overflow: hidden;
+	background-color: #fff;
+        background-image: url('images/body.gif');
+        background-repeat: repeat-x;
+        padding: 10px;
+}
+
+#INFORMACJE {
+	width: 204px;
+        min-height: 500px;
+	float: right;
 	overflow: hidden;
 	background-color: #fff;
         background-image: url('images/body.gif');
@@ -67,12 +171,12 @@ html, body {
         background-image: url('images/stopka.jpg');
         background-repeat: repeat-x;
         /*text-align: center;*/
-        height: 35px;
+        height: 55px;
         color: white; 
         font-size: 11px; 
         font-weight: normal;
         padding-left: 5px;
-        padding-top: 10px;
+        padding-top: 0px;
         padding-bottom: 10px;
 }
 
@@ -81,12 +185,28 @@ html, body {
         height: 100%;
         float: left;
 	overflow: hidden;
+        padding-top: 10px;
         border-right: 2px black solid;
+}
+#STOPKA_LOGO img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-right: 10px;
 }
 #STOPKA_PRAWA {
         float: left;
 	overflow: hidden;
+        padding-top: 20px;
         padding-left: 40px;
+}
+#STOPKA_RIGHT {
+        float: right;
+	overflow: hidden;
+        padding-right: 0px;
+}
+#STOPKA_RIGHT img {
+        float: right;
 }
 
 .news_kontener{
@@ -117,10 +237,18 @@ html, body {
         padding-left: 10px;
 }
 
+.news_author_data {
+        font-size: 10px;
+        text-align: right;
+        padding-top: 5px;
+}
+
 a { 
         text-decoration:underline; 
-        color:#8CA800}
-        a:hover{text-decoration:none;
+        color:#8CA800
+}
+a:hover {
+        text-decoration:none;
 }
 
 .read_more { 
@@ -134,8 +262,10 @@ a {
 .read_more:hover {
         color:#020202; 
         background:url(images/a1.gif) bottom right no-repeat; 
-        padding-right:6px; text-decoration:underline; 
+        padding-right:6px; 
+        text-decoration:underline; 
         font-weight:bold;
+        font-size: 12px;
 }
 
 .newsy_pozostale_kontener {
@@ -164,8 +294,12 @@ a {
 }
 .newsy_pozostale_tytul a:hover {
         font-weight:bold;
+        font-size: 16px;
 }
 
 .newsy_pozostale_tresc {
     
+}
+.footer {
+    color: black;
 }
