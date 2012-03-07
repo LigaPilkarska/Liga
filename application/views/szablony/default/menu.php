@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         <div id="KONTENER_BODY">
             <div id="MENU">
                 <?php
@@ -9,3 +10,8 @@
                 ?>
             </div>
             <div id="INFORMACJE">Dodatkowe informacje</div>
+=======
+<div id="top">
+    <div id="NAGLOWEK"></div>
+    <div id="MENU">Menu nawigacyjne</div>
+>>>>>>> 8834cc93c248b105102c497a02c2c7a7308a1836

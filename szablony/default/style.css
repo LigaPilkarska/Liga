@@ -219,6 +219,11 @@ html, body {
 	color:#7C7C7C; 
 }
 
+.wpis {
+        width: 458px;
+        float:left;
+}
+
 .news_caly {
         width: 458px;
         background-image: url('images/news_linia_nad.gif');
