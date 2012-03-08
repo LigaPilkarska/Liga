@@ -235,6 +235,7 @@ html, body {
 .news_tresc {
         /*overflow: hidden;*/
         padding-left: 10px;
+        /*text-align: justify;*/
 }
 
 .news_author_data {

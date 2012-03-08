@@ -10,7 +10,7 @@ class Main extends CI_Controller {
 	public function index()
 	{
             //$this->wpisy->wstaw_newsa('strona');
-            $data['title'] = 'Tytu³';
+            $data['title'] = 'Ligi pi³karskie';
             $data['description'] = 'To jest przyk³adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
@@ -26,6 +26,20 @@ class Main extends CI_Controller {
             //$this->jquery->hide('#trigger');
             //$this->
 	}
+        
+        public function wpis($idWpisu){
+            $data['wpisy'] = $this->wpisy->pobierz_wpis($idWpisu);
+            foreach($data['wpisy'] as $temp){
+                $data['title'] = $temp['tytul'].' - '.$temp['login'];
+            }
+            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/pokaz_wpis_view');
+            $this->load->view('szablony/default/footer');
+        }
 }
 
 /* End of file main.php */

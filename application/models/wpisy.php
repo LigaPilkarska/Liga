@@ -20,6 +20,7 @@ class Wpisy extends CI_Model {
             $this->db->where('idDruzyny', $liga);
         }
         //$query = $this->db->query('SELECT * FROM wpisy');
+        $this->db->join('konta', 'konta.idKonta = wpisy.idKonta');
         $query = $this->db->get('wpisy', 3);
         return $query->result_array();
     }
@@ -36,6 +37,13 @@ class Wpisy extends CI_Model {
         }
         //$query = $this->db->query('SELECT * FROM wpisy');
         $query = $this->db->get('wpisy', 3, 3);
+        return $query->result_array();
+    }
+    
+    public function pobierz_wpis($idWpisu) {
+        $this->db->where('idWpisu', $idWpisu);
+        $this->db->join('konta', 'konta.idKonta = wpisy.idKonta');
+        $query = $this->db->get('wpisy');
         return $query->result_array();
     }
     

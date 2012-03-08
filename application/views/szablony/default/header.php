@@ -24,7 +24,8 @@
     <div id="top">
 	<div id="NAGLOWEK">
             <div id="NAGLOWEK_LOGO">
-                <img src="<?php echo base_url(); ?>szablony/default/images/logosek.png" alt="logo" />
+                <?php echo anchor('', '<img src="'.base_url().'szablony/default/images/logosek.png" alt="logo" />'); ?>
+                
             </div>
             <div id="NAGLOWEK_KONTENER_PRAWO">
                 <div id="NAGLOWEK_PRAWO_TOP">
