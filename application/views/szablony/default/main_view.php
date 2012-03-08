@@ -29,6 +29,7 @@
                         <div class="newsy_pozostale_tresc"><?=substr($wpis['wpis'], 0, 150) ?>...</div>
                     </div>
                     <?php endforeach ?>
+<<<<<<< HEAD
                     
                     <!--<div class="newsy_pozostale_caly">
                         <div class="newsy_pozostale_tytul">05/03/2012 - <a href="#">News nr 5</a></div>
@@ -56,6 +57,8 @@
                     </map>
                     
                     
+=======
+>>>>>>> 44ca6c20ef2ecde4a882160fc7ead8c39c943039
                     <br style="line-height:5px;" /><a href="#" class="read_more">All news</a>
                 </div>
 

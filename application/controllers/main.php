@@ -5,6 +5,9 @@ class Main extends CI_Controller {
         public function __construct() {
             parent::__construct();
             $this->load->model('wpisy');
+            $this->load->model('ligi');
+            $this->load->model('druzyny');
+            $this->load->model('konta');
         }
     
 	public function index()

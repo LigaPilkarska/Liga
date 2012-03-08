@@ -123,6 +123,16 @@ html, body {
 	background-image: url("images/menu_poziome_tlo3.gif");
         padding-top: 20px;
 }
+
+#NAZWA {
+    width:520px;
+    color:black;
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+}
+
 #KONTENER_BODY {
         min-height: 500px;
         background-color: #fff;
