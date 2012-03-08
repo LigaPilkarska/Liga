@@ -6,6 +6,7 @@ class Liga extends CI_Controller {
             parent::__construct();
             $this->load->model('wpisy');
             $this->load->model('ligi');
+            $this->load->model('druzyny');
         }
     
 	public function index()
@@ -37,9 +38,21 @@ class Liga extends CI_Controller {
             $this->load->view('szablony/default/liga_view');
             $this->load->view('szablony/default/main_view');
             $this->load->view('szablony/default/footer');
-           
-            //$this->jquery->hide('#trigger');
-            //$this->
+	}
+        
+        public function druzyny($idLigi)
+	{
+            $data['title'] = 'Tytu³';
+            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['druzyny'] = $this->druzyny->pobierzDruzyny($idLigi);
+            $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/liga_view');
+            $this->load->view('szablony/default/lista_druzyn');
+            $this->load->view('szablony/default/footer');
 	}
 }
 

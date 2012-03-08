@@ -15,5 +15,11 @@ class Druzyny extends CI_Model {
         return $query->row();
     }
     
+    public function pobierzDruzyny($idLigi) {
+        $this->db->where('idLigi', $idLigi);
+        $query = $this->db->get('druzyny');
+        return $query->result_array();
+    }
+    
 }
 ?>

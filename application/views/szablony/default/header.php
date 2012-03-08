@@ -13,11 +13,6 @@
     <link rel="Shortcut icon" href="<?php echo base_url(); ?>szablony/default/images/favicon.ico" />
     <link rel="stylesheet" href='<?php echo base_url(); ?>szablony/default/style.css' type="text/css" media="screen" /> 
     <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript"></script>
-     <script type="text/javascript">
-         $(document).ready(function(){
-             $('#MENU').click(function() {alert('Czeka³a na Tadzika');})
-         });
-    </script>
     <title><?php echo $title ?></title>
 </head>
 <body>

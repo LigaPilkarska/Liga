@@ -7,6 +7,7 @@ class Main extends CI_Controller {
             $this->load->model('wpisy');
             $this->load->model('ligi');
             $this->load->model('druzyny');
+            $this->load->model('konta');
         }
     
 	public function index()
@@ -25,28 +26,6 @@ class Main extends CI_Controller {
             $this->load->library('javascript');
             $this->javascript->hide("#MENU");
             
-            //$this->jquery->hide('#trigger');
-            //$this->
-	}
-        
-        
-        
-        public function druzyna($idDruzyny)
-	{
-            $data['title'] = 'Tytu³';
-            $data['description'] = 'To jest przyk³adowy opis.';
-            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
-            $data['lang'] = 'pl';
-            $data['wpisy'] = $this->wpisy->pobierz_newsy('liga', $idDruzyny);
-            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('liga', $idDruzyny);
-            $data['nazwa'] = $this->druzyny->pobierzDane($idDruzyny);
-            $this->load->view('szablony/default/header', $data);
-            
-            $this->load->view('szablony/default/menu');
-            $this->load->view('szablony/default/druzyna_view');
-            $this->load->view('szablony/default/main_view');
-            $this->load->view('szablony/default/footer');
-           
             //$this->jquery->hide('#trigger');
             //$this->
 	}
