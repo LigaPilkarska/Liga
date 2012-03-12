@@ -14,8 +14,8 @@ class Druzyna extends CI_Controller {
             $data['description'] = 'To jest przyk³adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['wpisy'] = $this->wpisy->pobierz_newsy('liga', $idDruzyny);
-            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('liga', $idDruzyny);
+            $data['wpisy'] = $this->wpisy->pobierz_newsy('druzyna', $idDruzyny);
+            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('druzyna', $idDruzyny);
             $data['nazwa'] = $this->druzyny->pobierzDane($idDruzyny);
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');

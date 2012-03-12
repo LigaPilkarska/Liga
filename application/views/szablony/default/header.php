@@ -11,8 +11,14 @@
     <meta http-equiv="Creation-Date" content="Sun, 04 Mar 2012 15:42:18 GMT" />
     <meta name="Robots" content="all" />
     <link rel="Shortcut icon" href="<?php echo base_url(); ?>szablony/default/images/favicon.ico" />
+    
+    <link rel="stylesheet" href='<?php echo base_url(); ?>forms_view/assets/css/formalize.css' type="text/css" media="screen" /> 
     <link rel="stylesheet" href='<?php echo base_url(); ?>szablony/default/style.css' type="text/css" media="screen" /> 
+    
+    
     <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>forms_view/assets/js/jquery.formalize.js" type="text/javascript"></script>
+    
     <title><?php echo $title ?></title>
 </head>
 <body>

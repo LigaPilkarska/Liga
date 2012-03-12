@@ -227,6 +227,7 @@ html, body {
         font-family:Tahoma;
 	font-size:13px;
 	color:#7C7C7C; 
+        text-shadow: 2px 2px 10px yellow;
 }
 
 .news_caly {
@@ -240,6 +241,14 @@ html, body {
         float: left;
         padding-right: 10px;
         /*overflow: hidden;*/
+}
+.news_logo img {
+        width: 112px;
+        height: 96px;
+        opacity: 0.8;
+}
+.news_logo img:hover {
+        opacity: 1;
 }
 
 .news_tresc {
@@ -261,7 +270,9 @@ a {
 a:hover {
         text-decoration:none;
 }
-
+img {
+        border: none;
+}
 .read_more { 
         color:#020202; 
         background:url(images/a1.gif) bottom right no-repeat; 
@@ -312,5 +323,29 @@ a:hover {
     
 }
 .footer {
-    color: black;
+        color: black;
+}
+.form_logowania {
+        text-align: center;
+        float: right;
+}
+.form_logowania_fieldset legend {
+        font-size: 14px;
+        color: gray;
+}
+.form_logowania_fieldset {
+        border-top: 1px solid whitesmoke;
+        border-bottom: 2px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+}
+.form_logowania a {
+        color: #8CA800;
+        text-decoration: none;
+        font-size: 9px;
+}
+.form_logowania a:hover {
+        text-decoration: underline; 
+        color: #8CA800;
+        font-size: 9px;
 }

@@ -29,8 +29,8 @@ class Liga extends CI_Controller {
             $data['description'] = 'To jest przyk³adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['wpisy'] = $this->wpisy->pobierz_newsy('druzyna', $idLigi);
-            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('druzyna', $idLigi);
+            $data['wpisy'] = $this->wpisy->pobierz_newsy('liga', $idLigi);
+            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
             $this->load->view('szablony/default/header', $data);
             

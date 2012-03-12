@@ -1,7 +1,7 @@
     <div id="STOPKA">
         <div id="STOPKA_LOGO">
             <img width="50px" height="50px" src="<?php echo base_url(); ?>szablony/default/images/logosek.png" alt="logo" />
-            <p><strong>Ligi pi³karskie 2012</strong><br />£. I¿uk && T. Ceka³a</p>
+            <p><strong>Ligi pi³karskie 2012</strong><br />£. I¿uk &amp;&amp; T. Ceka³a</p>
         </div>
         <div id="STOPKA_PRAWA">
             <strong>Copyright </strong>2011 &copy; Ligi pi³karskie<br />
