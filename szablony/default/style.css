@@ -21,6 +21,7 @@ html, body {
 }
 #top {
 	width: 1004px;
+        height: auto;
         margin: 0 auto;
         font-family:Tahoma;
 	font-size:11px;
@@ -134,49 +135,46 @@ html, body {
 }
 
 #KONTENER_BODY {
+        /*min-height: 500px;*/
+        background: #fff url('images/body2.gif') repeat-x left bottom;
+        border: 0px solid gray;
+}
+#KONTENER_BODY2 {
         min-height: 500px;
-        background-color: #fff;
-        background-image: url('images/body.gif');
-        background-repeat: repeat-x;
+        background: url('images/body.gif') repeat-x right top;
 }
 #MENU {
 	width: 220px;
         min-height: 500px;
 	float: left;
-	overflow: hidden;
-	background-color: #fff;
-        background-image: url('images/body.gif');
-        background-repeat: repeat-x;
+	/*overflow: hidden; */
         padding: 10px;
+        
 }
 
 #INFORMACJE {
-	width: 204px;
-        min-height: 500px;
+	width: 200px;
+        height: 100%;
 	float: right;
-	overflow: hidden;
-	background-color: #fff;
-        background-image: url('images/body.gif');
-        background-repeat: repeat-x;
+	/*overflow: hidden;*/        
         padding: 10px;
+        
 }
 
 #TRESC {
-	width: 520px;
+	width: 522px;
         min-height: 500px;
 	float: left;
-	overflow: hidden;
-	background-color: #fff;
-        background-image: url('images/body.gif');
-        background-repeat: repeat-x;
+	/*overflow: hidden;*/
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 50px;
+        
 }
 
 #STOPKA {
 	clear: both;
-	width: 100%;
+	width: 997px;
 	background-color: #888;
         background-image: url('images/stopka.jpg');
         background-repeat: repeat-x;

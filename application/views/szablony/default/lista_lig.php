@@ -1,13 +1,6 @@
 <div id="TRESC">
-             <?php foreach($ligi as $liga): ?>
-                Województwo: <?=$liga['wojewodztwo']?> <br />
-                Klasa: <?=$liga['klasa']?> <br />
-                Grupa: <?=$liga['grupa']?> <br/>
-                Rok: <?=$liga['rok']?> <br />
-                <?php echo anchor('liga/wybor/'.$liga['idLigi'], 'Przejd¼'); ?><br />
-             <?php endforeach; ?>
-                
-                <img src="<?php echo base_url(); ?>szablony/default/images/wojewodztwa2.png" alt="mapa województw" usemap="#mapa_wojewodztw" />
+    
+                    <img style="float: right;" src="<?php echo base_url(); ?>szablony/default/images/wojewodztwa2.png" alt="mapa województw" usemap="#mapa_wojewodztw" />
                     <map id="mapa_wojewodztw" name="mapa_wojewodztw">
                         <area shape="poly" coords="18, 42, 77, 14, 82, 51, 23, 95" href="zachodniopomorskie" alt="woj. zachodniopomorskie" />
                         <area shape="poly" coords="83, 13, 87, 54, 121, 47, 143, 53, 149, 43, 146, 24, 131, 21, 123, 3" href="pomorskie" alt="woj. pomorskie" />
@@ -27,4 +20,12 @@
                         <area shape="poly" coords="220, 180, 229, 178, 237, 196, 270, 199, 247, 234, 252, 256, 210, 239, 204, 197" href="podkarpackie" alt="woj. podkarpackie" />
 	
                     </map>
+    
+             <?php foreach($ligi as $liga): ?>
+                Województwo: <?=$liga['wojewodztwo']?> <br />
+                Klasa: <?=$liga['klasa']?> <br />
+                Grupa: <?=$liga['grupa']?> <br/>
+                Rok: <?=$liga['rok']?> <br />
+                <?php echo anchor('liga/wybor/'.$liga['idLigi'], 'Przejd¼'); ?><br />
+             <?php endforeach; ?>
 </div>
