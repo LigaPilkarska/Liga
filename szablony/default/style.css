@@ -145,11 +145,37 @@ html, body {
 }
 #MENU {
 	width: 220px;
-        min-height: 500px;
+        /*min-height: 500px;*/
 	float: left;
 	/*overflow: hidden; */
         padding: 10px;
-        
+        text-align:center;
+        line-height:22px;
+}
+
+#MENU_NAGLOWEK {
+    color:black;
+    line-height:26px;
+    font-size: 20px;
+    background:#8CA800;
+}
+
+#MENU_ZAWARTOSC {
+    border-top: 1px solid whitesmoke;
+    border-bottom: 2px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+
+#MENU a {
+    text-decoration:none;
+    font-size: 18px;
+    color:black;
+}
+
+#MENU a:hover {
+    color:green;
+    text-decoration:none;
 }
 
 #INFORMACJE {

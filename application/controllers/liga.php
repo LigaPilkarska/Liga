@@ -17,6 +17,7 @@ class Liga extends CI_Controller {
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['ligi'] = $this->ligi->pobierz_ligi();
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/lista_lig');
@@ -32,6 +33,7 @@ class Liga extends CI_Controller {
             $data['wpisy'] = $this->wpisy->pobierz_newsy('liga', $idLigi);
             $data['wpisy2'] = $this->wpisy->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
             $this->load->view('szablony/default/header', $data);
             
             $this->load->view('szablony/default/menu');
@@ -48,6 +50,7 @@ class Liga extends CI_Controller {
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny->pobierzDruzyny($idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');

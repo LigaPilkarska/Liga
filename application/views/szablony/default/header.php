@@ -32,10 +32,10 @@
                 <div id="NAGLOWEK_PRAWO_TOP">
                     <table>
                         <tr>
-                            <td><a href="#">G³ówna</a></td>
-                            <td><a href="#">Szukaj</a></td>
+                            <td><?php echo anchor('/', 'G³ówna') ?></td>
+                            <td><?php echo anchor('#', 'Szukaj') ?></td>
                             <td><?php echo anchor('liga/index', 'Ligi') ?></td>
-                            <td><a href="#">Kontakt</a></td>
+                            <td><?php echo anchor('#', 'Kontakt') ?></td>
                         </tr>
                     </table> 
                 </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div id="NAGLOWEK_PRAWO_BOTTOM">
                     <ul>
-                        <li><a href="#">G³ówna</a></li>
+                        <li><?php echo anchor('/', 'G³ówna') ?></li>
                         <li><a href="#">O nas</a></li>
                         <li><?php echo anchor('liga/index', 'Ligi') ?></li>
                         <li><a href="#">Zareklamuj siê</a></li>

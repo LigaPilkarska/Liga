@@ -19,6 +19,7 @@ class Main extends CI_Controller {
             $data['lang'] = 'pl';
             $data['wpisy'] = $this->wpisy->pobierz_newsy('strona');
             $data['wpisy2'] = $this->wpisy->pobierz_newsy2('strona');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/main_view');
@@ -38,6 +39,7 @@ class Main extends CI_Controller {
             $data['description'] = 'To jest przyk³adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/pokaz_wpis_view');

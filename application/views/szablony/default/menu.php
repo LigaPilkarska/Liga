@@ -1,7 +1,14 @@
         <div id="KONTENER_BODY">
             <div id="KONTENER_BODY2">
             <div id="MENU">
-                             
+                <div id="MENU_NAGLOWEK">MENU </div><hr />
+                <div id="MENU_ZAWARTOSC">
+                <?php foreach($opcje as $key => $wartosc) {
+                        echo anchor($key, $wartosc);
+                        echo '<br />';
+                      } 
+                ?>
+                </div>
             </div>
             <div id="INFORMACJE">
 
