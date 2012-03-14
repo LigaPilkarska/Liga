@@ -39,7 +39,18 @@ class Main extends CI_Controller {
             $data['description'] = 'To jest przyk³adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            
+            foreach($data['wpisy'] as $wpis) {
+                $idLigi = $wpis['idLigi'];
+                $idDruzyny = $wpis['idDruzyny'];
+            }
+            if($idLigi!=NULL)
+                $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
+            elseif($idDruzyny!=NULL)
+                $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o dru¿ynie', 'druzya'.$idDruzyny=>'Zawodnicy', 'main/2'=>'Rozegrane mecze');
+            else
+                $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');  
+            
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/pokaz_wpis_view');

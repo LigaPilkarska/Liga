@@ -20,12 +20,28 @@
                         <area shape="poly" coords="220, 180, 229, 178, 237, 196, 270, 199, 247, 234, 252, 256, 210, 239, 204, 197" href="podkarpackie" alt="woj. podkarpackie" />
 	
                     </map>
-    
-             <?php foreach($ligi as $liga): ?>
-                Województwo: <?=$liga['wojewodztwo']?> <br />
-                Klasa: <?=$liga['klasa']?> <br />
-                Grupa: <?=$liga['grupa']?> <br/>
-                Rok: <?=$liga['rok']?> <br />
-                <?php echo anchor('liga/wybor/'.$liga['idLigi'], 'Przejd¼'); ?><br />
-             <?php endforeach; ?>
+             
+             Województwa:       
+             <ul id="WOJEWODZTWA">
+                 <li><a href="" title="dolno¶l±skie">woj. dolno¶l±skie</a></li>
+                 <li><a href="" title="kujawsko-pomorskie">woj. kujawsko-pomorskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. lubelskie</a></li>
+                 <li><a href="" title="lubuskie">woj. lubuskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. ³ódzkie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. ma³opolskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. mazowieckie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. opolskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. podkarpackie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. podlaskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. pomorskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. ¶l±skie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. ¶wiêtokrzyskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. warmiñsko-mazurskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. wielkopolskie</a></li>
+                 <li><a href="" title="dolno¶l±skie1">woj. zachodniopomorskie</a></li>
+                 
+                 
+             </ul>
+             
+             <div id="info"></div>
 </div>

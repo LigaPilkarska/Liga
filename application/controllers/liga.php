@@ -50,7 +50,7 @@ class Liga extends CI_Controller {
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny->pobierzDruzyny($idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny', 'liga/index'=>'Ligi');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');
