@@ -21,21 +21,51 @@
     <script type="text/javascript">
        $.ajaxSetup({
             beforeSend:function(xhr) {
-                xhr.overrideMimeType('text/html; charset=iso-8859-2');
-            },
-            contentType: "application/x-www-form-urlencoded; charset=utf-8"
+                xhr.overrideMimeType('text/html; charset=utf-8');
+            }
+            //contentType: "application/x-www-form-urlencoded; charset=iso-8859-2"
         });
     $(document).ready(function(){
         
         $('#mapa_wojewodztw > area').click(function(){
+            $('div#info').ajaxStart(function() {
+                $(this).html('');
+                $(this).toggleClass('ajax_loader');
+           })
+           .ajaxStop(function() {
+                $(this).toggleClass('ajax_loader');
+           });
+            
             var val = $(this).attr('href');
-            alert(val);
+            $.post('../../skrypty/liga.php', {'idLigi':val}, function(e) { 
+               $('div#info').html(e);
+            });
             return false;
         });
         
+        
+    
+         /*$('<div id="loader">Loadingssssssssssssssssssssssssssssssssssssssssssssssssssssssss...</div>').insertBefore('div#info')
+          .ajaxStart(function() {
+            $(this).show();
+          })
+          .ajaxStop(function() {
+            $(this).hide();
+          });*/   
+    
+        
         $('ul#WOJEWODZTWA a').click(function() {
-           var woj = $(this).attr('title');
            
+           $('div#info').ajaxStart(function() {
+                $(this).html('');
+                $(this).toggleClass('ajax_loader');
+           })
+           .ajaxStop(function() {
+                $(this).toggleClass('ajax_loader');
+           });
+           
+           var woj = $(this).attr('title');
+                     
            $.post('http://localhost/Liga/skrypty/liga.php', {'idLigi':woj}, function(e) { 
                $('div#info').html(e);
             });

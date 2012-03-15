@@ -144,7 +144,7 @@ html, body {
         background: url('images/body.gif') repeat-x right top;
 }
 #MENU {
-	width: 220px;
+	width: 190px;
         /*min-height: 500px;*/
 	float: left;
 	/*overflow: hidden; */
@@ -192,7 +192,7 @@ html, body {
         min-height: 500px;
 	float: left;
 	/*overflow: hidden;*/
-        padding-left: 10px;
+        padding-left: 40px;
         padding-right: 10px;
         padding-top: 50px;
         
@@ -372,4 +372,12 @@ img {
         text-decoration: underline; 
         color: #8CA800;
         font-size: 9px;
+}
+div#info {
+        min-height: 30px;
+}
+.ajax_loader {
+        background-image: url('images/ajax-loader.gif');
+        background-repeat: no-repeat;
+        background-position: left;    
 }
