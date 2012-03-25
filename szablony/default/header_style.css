@@ -1,0 +1,127 @@
+/* 
+    Document   : header_style
+    Created on : 2012-03-19, 19:47:03
+    Author     : Izuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html, body {
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+        margin: 0 auto;
+        text-align: center;
+}
+#top {
+	width: 1004px;
+        height: auto;
+        margin: 0 auto;
+        font-family:Tahoma;
+	font-size:11px;
+	line-height:13px;
+	color:#7C7C7C;
+        text-align: left;
+}
+#NAGLOWEK {
+	background-color: #888;
+        height: 240px;
+        background-image: url('images/top.jpg');
+}
+#NAGLOWEK_LOGO {
+        width: 195px;
+        height: 200px;
+        float: left;
+        padding-top: 30px;
+        padding-left: 0px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+}
+#NAGLOWEK_LOGO img {
+        width: 200px;
+        height: 200px;
+}
+#NAGLOWEK_KONTENER_PRAWO {
+        width: 750px;
+        height: 230px;
+        float: left;
+}
+#NAGLOWEK_PRAWO_TOP {
+        width: 750px;
+        color: black;
+        font-size: 13px;
+        height: 40px;
+        float: left;
+        padding-top: 22px;
+        padding-left: 30px;
+}
+#NAGLOWEK_PRAWO_TOP a, a:hover {
+        color: black;
+        font-size: 13px;
+        text-decoration: none;
+}
+#NAGLOWEK_PRAWO_TOP table td {
+        width: 88px;
+}
+#NAGLOWEK_PRAWO_MIDDLE {
+        height: 90px;
+        width: 760px;
+        float: left;
+        padding-top: 23px;
+        padding-left: 20px;
+        overflow: hidden;
+}
+#NAGLOWEK_PRAWO_BOTTOM {
+        width: 760px;
+        height: 80px;
+        float: left;
+        padding-top: 11px;
+}
+#NAGLOWEK_PRAWO_BOTTOM ul, ul li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul {
+	float: left;
+	/*background-color: #fff;*/
+	padding: 1px 0 1px 1px;
+	border: 0px solid #000;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul li {
+	float: left;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul a:link, ul a:visited {
+	text-decoration: none;
+	display: block;
+	font-weight: bold;
+	background: #000 url("images/menu_poziome_tlo3.gif") repeat-x center;
+	color: black;
+	padding: 10px 20px;
+	border-right: 0px solid #fff;
+	border-right: 0px solid #fff;
+}
+
+#NAGLOWEK_PRAWO_BOTTOM ul a:hover {
+        color: black;
+	background-color: green;
+	background-image: url("images/menu_poziome_tlo3.gif");
+        padding-top: 14px;
+}
+#NAGLOWEK_PRAWO_BOTTOM ul a:active {
+        color: blue;
+	background-color: green;
+	background-image: url("images/menu_poziome_tlo3.gif");
+        padding-top: 20px;
+}
+

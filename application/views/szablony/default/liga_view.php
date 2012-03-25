@@ -1,5 +1,5 @@
-<div id="NAZWA">
-    <h3>Województwo <?=$nazwa->wojewodztwo ?> / Klasa <?=$nazwa->klasa ?> / 
+<div id="TYTUL_STRONY">
+    <h3>WojewÃ³dztwo <?=$nazwa->wojewodztwo ?> / Klasa <?=$nazwa->klasa ?> / 
         Grupa <?=$nazwa->grupa ?> / Rok <?=$nazwa->rok ?> </h3>
 </div>
 

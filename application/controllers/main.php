@@ -13,8 +13,8 @@ class Main extends CI_Controller {
 	public function index()
 	{
             //$this->wpisy->wstaw_newsa('strona');
-            $data['title'] = 'Ligi pi³karskie';
-            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['title'] = 'Ligi piÅ‚karskie';
+            $data['description'] = 'To jest przykÅ‚adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['wpisy'] = $this->wpisy->pobierz_newsy('strona');
@@ -24,11 +24,6 @@ class Main extends CI_Controller {
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/main_view');
             $this->load->view('szablony/default/footer');
-            $this->load->library('javascript');
-            $this->javascript->hide("#MENU");
-            
-            //$this->jquery->hide('#trigger');
-            //$this->
 	}
         
         public function wpis($idWpisu){
@@ -36,7 +31,7 @@ class Main extends CI_Controller {
             foreach($data['wpisy'] as $temp){
                 $data['title'] = $temp['tytul'].' - '.$temp['login'];
             }
-            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['description'] = 'To jest przykï¿½adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             
@@ -45,9 +40,9 @@ class Main extends CI_Controller {
                 $idDruzyny = $wpis['idDruzyny'];
             }
             if($idLigi!=NULL)
-                $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
+                $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'DruÅ¼yny');
             elseif($idDruzyny!=NULL)
-                $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o dru¿ynie', 'druzya'.$idDruzyny=>'Zawodnicy', 'main/2'=>'Rozegrane mecze');
+                $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o druÅ¼ynie', 'druzya'.$idDruzyny=>'Zawodnicy', 'main/2'=>'Rozegrane mecze');
             else
                 $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');  
             

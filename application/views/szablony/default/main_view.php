@@ -16,10 +16,11 @@
                              <?=substr($wpis['wpis'], 0, 400) ?>...
                             <br style="line-height:5px;" /><?php echo anchor(site_url().'/main/wpis/'.$wpis['idWpisu'], 'Read more', array('class'=>'read_more')) ?>
                         </div>
-                        <div class="news_author_data">Doda≥: <a href="mailto:<?=$wpis['mail'] ?>"><?=$wpis['login'] ?></a>, <?php echo(date('d/m/Y H:i' ,mysql_to_unix($wpis['data']))); ?></div>
+                        <div class="news_author_data">Doda≈Ç: <a href="mailto:<?=$wpis['mail'] ?>"><?=$wpis['login'] ?></a>, <?php echo(date('d/m/Y H:i' ,mysql_to_unix($wpis['data']))); ?></div>
                     </div>
                 </div><br /><br />
-             <?php endforeach ?>
+             <?php endforeach ?> 
+             <?php if($wpisy2 != null){ ?>
                  
                 <div class="newsy_pozostale_kontener">
                     
@@ -31,8 +32,8 @@
                     <?php endforeach ?>
                     <br style="line-height:5px;" /><a href="#" class="read_more">All news</a>
                 </div>
-
+              <?php } ?>
             </div>
-        </div>
-        <!--</div>-->
+        <!--</div>
+        </div>-->
 	

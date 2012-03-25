@@ -1,0 +1,95 @@
+/* 
+    Document   : menu_style
+    Created on : 2012-03-19, 19:47:40
+    Author     : Izuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#KONTENER_BODY {
+        /*min-height: 500px;*/
+        background: #fff url('images/body2.gif') repeat-x left bottom;
+        border: 0px solid gray;
+}
+#KONTENER_BODY2 {
+        min-height: 500px;
+        background: url('images/body.gif') repeat-x right top;
+}
+#MENU {
+	width: 190px;
+        /*min-height: 500px;*/
+	float: left;
+	/*overflow: hidden; */
+        padding: 10px;
+        text-align:center;
+        line-height:22px;
+}
+
+#MENU_NAGLOWEK {
+        color:black;
+        line-height:26px;
+        font-size: 20px;
+        background:#8CA800;
+        text-align: center;
+}
+
+#MENU_ZAWARTOSC {
+        border-top: 1px solid whitesmoke;
+        border-bottom: 2px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+}
+
+#MENU a {
+        text-decoration:none;
+        font-size: 18px;
+        color:black;
+}
+
+#MENU a:hover {
+        color:green;
+        text-decoration:none;
+}
+
+#INFORMACJE {
+	width: 200px;
+        height: 100%;
+	float: right;
+	/*overflow: hidden;*/        
+        padding: 10px;
+        
+}
+.form_logowania {
+        text-align: center;
+        float: right;
+}
+.form_logowania_fieldset legend {
+        font-size: 14px;
+        color: gray;
+}
+.form_logowania_fieldset {
+        border-top: 1px solid whitesmoke;
+        border-bottom: 2px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+}
+.form_logowania a {
+        color: #8CA800;
+        text-decoration: none;
+        font-size: 9px;
+}
+.form_logowania a:hover {
+        text-decoration: underline; 
+        color: #8CA800;
+        font-size: 9px;
+}
+.ajax_loader {
+        background-image: url('images/ajax-loader.gif');
+        background-repeat: no-repeat;
+        background-position: left;    
+}

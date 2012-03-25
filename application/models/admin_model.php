@@ -1,6 +1,6 @@
 <?php
 
-class Konta extends CI_Model {
+class Admin_model extends CI_Model {
     
     public function __construct() {
         parent::__construct();
@@ -9,10 +9,12 @@ class Konta extends CI_Model {
         //SET NAMES 'utf8' lub 'latin2';
     }
     
-    public function pobierzHaslo($login) {
+    public function sprLogin($login, $haslo) {
         $this->db->where('login', $login);
+        $this->db->where('haslo', $haslo);
         $query = $this->db->get('konta');
-        return $query->row()->haslo;
+        return $query->row();
     }
+    
 }
 ?>

@@ -1,0 +1,177 @@
+/* 
+    Document   : body_style
+    Created on : 2012-03-19, 19:48:08
+    Author     : Izuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#TYTUL_STRONY {
+        width:520px;
+        color:black;
+        float:left;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align:center;
+}
+#TRESC {
+	width: 522px;
+        min-height: 500px;
+	float: left;
+	/*overflow: hidden;*/
+        padding-left: 40px;
+        padding-right: 10px;
+        padding-top: 50px;
+        
+}
+.news_kontener{
+        padding-bottom: 30px;
+}
+.news_tytul h1 {
+        font-family:Tahoma;
+	font-size:13px;
+	color:#7C7C7C; 
+        text-shadow: 2px 2px 10px yellow;
+}
+.news_caly {
+        width: 458px;
+        background-image: url('images/news_linia_nad.gif');
+        background-repeat: repeat-x;
+        padding-top: 8px;
+}
+.news_logo {
+        float: left;
+        padding-right: 10px;
+        /*overflow: hidden;*/
+}
+.news_logo img {
+        width: 112px;
+        height: 96px;
+        opacity: 0.8;
+}
+.news_logo img:hover {
+        opacity: 1;
+}
+.news_tresc {
+        /*overflow: hidden;*/
+        padding-left: 10px;
+        /*text-align: justify;*/
+}
+.news_author_data {
+        font-size: 10px;
+        text-align: right;
+        padding-top: 5px;
+}
+#linki_wojewodztw {
+        background: none;
+        font-family:Tahoma;
+	font-size:11px;
+        font-weight: normal;
+	color:#7C7C7C;
+}
+#linki_wojewodztw ul {
+        background: none;
+}
+#linki_wojewodztw li {
+        background: none;
+}
+#linki_wojewodztw ul li a:link, #linki_wojewodztw ul li a:visited {
+        text-decoration:underline; 
+        color:#8CA800;
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+}
+#WOJEWODZTWA {
+        background: none;
+}
+#WOJEWODZTWA a { 
+        text-decoration:underline; 
+        color:#8CA800;
+}
+#info {}
+#info ul li{
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+}
+#info ul li a:link, #info ul li a:visited {
+        text-decoration:underline; 
+        color:#8CA800;
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+}
+#info a:hover {
+        text-decoration:underline; 
+        color:#8CA800;
+        background: none;
+}
+a { 
+        text-decoration:underline; 
+        color:#8CA800;
+}
+a:visited { 
+        text-decoration:underline; 
+        color:#8CA800;
+}
+a:hover {
+        text-decoration:none;
+}
+img {
+        border: none;
+}
+.read_more { 
+        color:#020202; 
+        background:url(images/a1.gif) bottom right no-repeat; 
+        padding-right:6px; 
+        text-decoration:none; 
+        font-weight:bold; 
+        font-size:10px
+}
+.read_more:hover {
+        color:#020202; 
+        background:url(images/a1.gif) bottom right no-repeat; 
+        padding-right:6px; 
+        text-decoration:underline; 
+        font-weight:bold;
+        font-size: 12px;
+}
+.newsy_pozostale_kontener {
+        width: 268px;
+        background-image: url('images/newsy_linia_nad.gif');
+        background-repeat: repeat-x;
+        margin-top: 38px;
+        padding-top: 8px;
+        padding-bottom: 35px;
+}
+.newsy_pozostale_caly {
+        padding-bottom: 8px;
+}
+.newsy_pozostale_tytul {
+        background:url(images/a1.gif) top left no-repeat;
+        background-position:0 3px;
+        padding-left:6px; 
+        font-weight:bold; 
+        color:#020202;
+}
+.newsy_pozostale_tytul a { 
+        color:#8CA800;
+}
+.newsy_pozostale_tytul a:hover {
+        font-weight:bold;
+        font-size: 16px;
+}
+.newsy_pozostale_tresc {}
+div#info {
+        min-height: 30px;
+}
+

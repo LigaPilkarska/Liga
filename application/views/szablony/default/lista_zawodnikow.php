@@ -1,5 +1,5 @@
-<div id="TRESC">
-     Zawodnicy w druøynie:
+<div id="TYTUL_STRONY">
+     Zawodnicy w dru≈ºynie:
      <ol>
          <?php foreach($zawodnicy as $zawodnik): ?>
          <li><?php echo anchor('zawodnik/wybor/'.$zawodnik['idZawodnika'], $zawodnik['nazwiskoZawodnika'].' '.$zawodnik['imieZawodnika']); ?></li>

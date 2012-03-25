@@ -2,16 +2,16 @@
 //header("Content-Type: text/html; charset=iso-8859-2");
 // nawiazujemy polaczenie
 $connection = @mysql_connect('localhost', 'root', '')
-// w przypadku niepowodznie wy¶wietlamy komunikat
-or die('Brak po³±czenia z serwerem MySQL.<br />B³±d: '.mysql_error());
-// po³±czenie nawi±zane ;-)
-// nawi±zujemy po³±czenie z baz± danych
+// w przypadku niepowodznie wyï¿½wietlamy komunikat
+or die('Brak podÅ‚Ä…czenia z serwerem MySQL.<br />Bï¿½ï¿½d: '.mysql_error());
+// poï¿½ï¿½czenie nawiï¿½zane ;-)
+// nawiï¿½zujemy poï¿½ï¿½czenie z bazï¿½ danych
 $db = @mysql_select_db('ligapilkarska', $connection)
-// w przypadku niepowodzenia wy¶wietlamy komunikat
-or die('Nie mogê po³±czyæ siê z baz± danych<br />B³±d: '.mysql_error());
-// po³±czenie nawi±zane ;-)
+// w przypadku niepowodzenia wyï¿½wietlamy komunikat
+or die('Nie mogÄ™ podÅ‚Ä…czyÄ‡ siÄ™ z bazÄ… danych<br />Bï¿½ï¿½d: '.mysql_error());
+// poï¿½ï¿½czenie nawiï¿½zane ;-)
 mysql_query('SET NAMES utf8');
-//$query='INSERT INTO ligi VALUES(null, "lubuskie", "A", "Inowroc³aw", "2012")';
+//$query='INSERT INTO ligi VALUES(null, "lubuskie", "A", "Inowrocï¿½aw", "2012")';
 
 $query = 'SELECT * FROM ligi WHERE wojewodztwo="'.$_POST['idLigi'].'"';
 //echo $query;
@@ -29,7 +29,7 @@ if(mysql_num_rows($wynik)>0) {
 
 }
 else { 
-    echo 'Niestety dla tego województwa nie ma jeszcze wprowadzonych ¿adnych lig!';
+    echo 'Niestety dla tego wojewÃ³dztwa nie ma jeszcze wprowadzonych Å¼adnych lig!';
  }
 mysql_close($connection);
 ?>

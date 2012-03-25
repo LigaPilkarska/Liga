@@ -12,8 +12,8 @@ class Liga extends CI_Controller {
 	public function index()
 	{
             //$this->wpisy->wstaw_newsa('strona');
-            $data['title'] = 'Tytu³';
-            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['title'] = 'TytuÅ‚';
+            $data['description'] = 'To jest przykÅ‚adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['ligi'] = $this->ligi->pobierz_ligi();
@@ -26,14 +26,14 @@ class Liga extends CI_Controller {
         
         public function wybor($idLigi)
 	{
-            $data['title'] = 'Tytu³';
-            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['title'] = 'TytuÅ‚';
+            $data['description'] = 'To jest przykÅ‚adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['wpisy'] = $this->wpisy->pobierz_newsy('liga', $idLigi);
             $data['wpisy2'] = $this->wpisy->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'DruÅ¼yny');
             $this->load->view('szablony/default/header', $data);
             
             $this->load->view('szablony/default/menu');
@@ -44,13 +44,13 @@ class Liga extends CI_Controller {
         
         public function druzyny($idLigi)
 	{
-            $data['title'] = 'Tytu³';
-            $data['description'] = 'To jest przyk³adowy opis.';
+            $data['title'] = 'TytuÅ‚';
+            $data['description'] = 'To jest przykÅ‚adowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny->pobierzDruzyny($idLigi);
             $data['nazwa'] = $this->ligi->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Dru¿yny', 'liga/index'=>'Ligi');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'DruÅ¼yny', 'liga/index'=>'Ligi');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');

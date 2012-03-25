@@ -5,7 +5,7 @@ class Wpisy extends CI_Model {
     public function __construct() {
         parent::__construct();
         $this->load->database();
-        $this->db->query('SET NAMES latin2');
+        $this->db->query('SET NAMES utf8');
         //SET NAMES 'utf8' lub 'latin2';
     }
     
@@ -50,7 +50,7 @@ class Wpisy extends CI_Model {
     public function wstaw_newsa($slug='strona'){
         if($slug=='strona') {
             $data = array(
-    'tytul' => 'Wódka, papierochy i drugi' ,
+    'tytul' => 'WÃ³dka, papierochy i drugi' ,
     'wpis' => 'ble ble lbe lsa ajs asjkg asj gnajs gnasj ngas; asl; gasl glasg ajsng jasn gjasn jgnas g
          akdgladn gladk gmadlk gmladk mgadl mgdam gkad mgkadmk gmadk; gmad; g
          sa ka gjah gja kglad gjadj ghjadh gjadhj ghjadh gjadh gjdah jg adgh jadh gkjadhg kjhadjk hgjadhj 

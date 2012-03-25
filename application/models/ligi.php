@@ -5,7 +5,7 @@ class Ligi extends CI_Model {
     public function __construct() {
         parent::__construct();
         $this->load->database();
-        $this->db->query('SET NAMES latin2');
+        $this->db->query('SET NAMES utf8');
         //SET NAMES 'utf8' lub 'latin2';
     }
     

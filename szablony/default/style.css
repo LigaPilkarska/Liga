@@ -124,16 +124,6 @@ html, body {
 	background-image: url("images/menu_poziome_tlo3.gif");
         padding-top: 20px;
 }
-
-#NAZWA {
-    width:520px;
-    color:black;
-    float:left;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align:center;
-}
-
 #KONTENER_BODY {
         /*min-height: 500px;*/
         background: #fff url('images/body2.gif') repeat-x left bottom;
@@ -158,6 +148,7 @@ html, body {
     line-height:26px;
     font-size: 20px;
     background:#8CA800;
+    text-align: center;
 }
 
 #MENU_ZAWARTOSC {
@@ -186,7 +177,14 @@ html, body {
         padding: 10px;
         
 }
-
+#TYTUL_STRONY {
+    width:520px;
+    color:black;
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+}
 #TRESC {
 	width: 522px;
         min-height: 500px;
@@ -286,10 +284,37 @@ html, body {
         text-align: right;
         padding-top: 5px;
 }
-
+#linki_wojewodztw {
+        background: none;
+        font-family:Tahoma;
+	font-size:11px;
+        font-weight: normal;
+	color:#7C7C7C;
+}
+#linki_wojewodztw ul {
+        background: none;
+}
+#linki_wojewodztw li {
+        background: none;
+}
+#linki_wojewodztw a {
+        line-height: 2px;
+        background: none;
+}
+#WOJEWODZTWA {
+        background: none;
+}
+#WOJEWODZTWA a { 
+        text-decoration:underline; 
+        color:#8CA800;
+}
 a { 
         text-decoration:underline; 
-        color:#8CA800
+        color:#8CA800;
+}
+a:visited { 
+        text-decoration:underline; 
+        color:#8CA800;
 }
 a:hover {
         text-decoration:none;

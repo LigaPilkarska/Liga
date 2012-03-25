@@ -1,0 +1,59 @@
+/* 
+    Document   : footer_style
+    Created on : 2012-03-19, 19:47:24
+    Author     : Izuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#STOPKA {
+	clear: both;
+	width: 997px;
+	background-color: #888;
+        background-image: url('images/stopka.jpg');
+        background-repeat: repeat-x;
+        /*text-align: center;*/
+        height: 55px;
+        color: white; 
+        font-size: 11px; 
+        font-weight: normal;
+        padding-left: 5px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+}
+#STOPKA_LOGO {
+        width: 200px;
+        height: 100%;
+        float: left;
+	overflow: hidden;
+        padding-top: 10px;
+        border-right: 2px black solid;
+}
+#STOPKA_LOGO img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-right: 10px;
+}
+#STOPKA_PRAWA {
+        float: left;
+	overflow: hidden;
+        padding-top: 20px;
+        padding-left: 40px;
+}
+#STOPKA_RIGHT {
+        float: right;
+	overflow: hidden;
+        padding-right: 0px;
+}
+#STOPKA_RIGHT img {
+        float: right;
+}
+.footer {
+        color: black;
+}

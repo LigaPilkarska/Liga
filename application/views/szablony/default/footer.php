@@ -1,10 +1,10 @@
     <div id="STOPKA">
         <div id="STOPKA_LOGO">
             <img width="50px" height="50px" src="<?php echo base_url(); ?>szablony/default/images/logosek.png" alt="logo" />
-            <p><strong>Polska Pi≥ka</strong><br />£. Iøuk &amp;&amp; T. Ceka≥a</p>
+            <p><strong>Polska Pi≈Çka</strong><br />≈Å. I≈ºuk &amp;&amp; T. Ceka≈Ça</p>
         </div>
         <div id="STOPKA_PRAWA">
-            <strong>Copyright </strong>2011 &copy; Polska Pi≥ka<br />
+            <strong>Copyright </strong>2011 &copy; Polska Pi≈Çka<br />
             All Rights Reserved. Privacy Police. Terms of Use.
         </div>
         <div id="STOPKA_RIGHT">
@@ -18,6 +18,8 @@
             <br /><p class="footer">Strona wygenerowana w <strong>{elapsed_time}</strong> sekund(y).</p>
         </div>
     </div>
+</div><!-- end of div#KONTENER_BODY2-->
+</div><!-- end of div#KONTENER_BODY-->
 </div><!-- end of div#top-->
 </body> 
 </html>
