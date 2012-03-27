@@ -19,6 +19,28 @@
         padding-right: 10px;
         text-align:center;
 }
+
+#ZAWODNIK {
+    float:left;
+    padding-left: 40px;
+    padding-right: 10px;
+    padding-top: 30px;
+    min-height: 400px;
+    width:520px;
+}
+
+.uczestnictwa {
+    float:left;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+#ZAWODNIK img {
+    float: right;
+    padding-right:30px;
+    width:120px;
+}
+
 #TRESC {
 	width: 522px;
         min-height: 500px;
@@ -171,6 +193,7 @@ img {
         font-size: 16px;
 }
 .newsy_pozostale_tresc {}
+
 div#info {
         min-height: 30px;
 }

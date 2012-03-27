@@ -4,10 +4,10 @@ class Main extends CI_Controller {
 
         public function __construct() {
             parent::__construct();
-            $this->load->model('wpisy');
-            $this->load->model('ligi');
-            $this->load->model('druzyny');
-            $this->load->model('konta');
+            $this->load->model('wpisy_model');
+            $this->load->model('ligi_model');
+            $this->load->model('druzyny_model');
+            $this->load->model('konta_model');
         }
     
 	public function index()
@@ -17,8 +17,8 @@ class Main extends CI_Controller {
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['wpisy'] = $this->wpisy->pobierz_newsy('strona');
-            $data['wpisy2'] = $this->wpisy->pobierz_newsy2('strona');
+            $data['wpisy'] = $this->wpisy_model->pobierz_newsy('strona');
+            $data['wpisy2'] = $this->wpisy_model->pobierz_newsy2('strona');
             $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
@@ -27,7 +27,7 @@ class Main extends CI_Controller {
 	}
         
         public function wpis($idWpisu){
-            $data['wpisy'] = $this->wpisy->pobierz_wpis($idWpisu);
+            $data['wpisy'] = $this->wpisy_model->pobierz_wpis($idWpisu);
             foreach($data['wpisy'] as $temp){
                 $data['title'] = $temp['tytul'].' - '.$temp['login'];
             }
