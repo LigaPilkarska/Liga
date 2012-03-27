@@ -12,6 +12,7 @@ class Admin_model extends CI_Model {
     public function sprLogin($login, $haslo) {
         $this->db->where('login', $login);
         $this->db->where('haslo', $haslo);
+        $this->db->select('idKonta, login, haslo, mail');
         $query = $this->db->get('konta');
         return $query->row();
     }

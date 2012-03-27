@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
         }
         
         public function _checkLogin($login, $haslo) {
-            return $this->admin_model->sprLogin($login, $haslo);
+            return $this->admin_model->sprLogin($login, sha1('bum'.$haslo.'cyk'));
         }
         
         public function index() {
@@ -23,6 +23,8 @@ class Admin extends CI_Controller {
                     $data['description'] = 'To jest przykładowy opis.';
                     $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
                     $data['lang'] = 'pl';
+                    $data['login'] = $login;
+                    $data['haslo'] = $haslo;
                     $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
                     $this->load->view('szablony/default/header', $data);
                     $this->load->view('szablony/default/menu');
@@ -63,10 +65,16 @@ class Admin extends CI_Controller {
         }
         
         public function wyloguj(){
-            $array_items = array('session_id' => '', 'username'  => '' ,'email' => '', 'uprawnienie' => '');
-            $this->session->unset_userdata($array_items);
-            $this->session->sess_destroy();
-            redirect('http://localhost/liga/index.php/liga/wybor/2');
+            $czyZalogowany = $this->session->userdata('login');
+            if(isset($czyZalogowany) && $czyZalogowany != '') {
+                $array_items = array('session_id' => '', 'username'  => '' ,'email' => '', 'uprawnienie' => '');
+                $this->session->unset_userdata($array_items);
+                $this->session->sess_destroy();
+                redirect('http://localhost/liga/index.php/');
+            }
+            else {
+                redirect('http://localhost/liga/index.php/');
+            }
         }
 }
 ?>
