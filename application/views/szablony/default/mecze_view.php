@@ -1,8 +1,8 @@
 <div id="TRESC">
-     <ul>
-         <li>Kolejka | Data | Gospodarz - Gość</li>
+     <table>
+         <tr><th>Kolejka</th><th>Data</th><th>Gospodarz - Gość</th></tr>
          <?php foreach($mecze as $mecz): ?>
-         <li><?php echo anchor('mecz/mecz_opis/'.$mecz['idMecze'], $mecz['kolejka'].' '.$mecz['data'].' '.$mecz['nazwaGospodarza'].' - '.$mecz['nazwaGoscia']); ?></li>
+         <tr><?php echo '<td>'.$mecz['kolejka'].'</td><td>'.$mecz['data'].'</td><td>'.anchor('mecz/mecz_opis/'.$mecz['idMecze'], $mecz['nazwaGospodarza'].' - '.$mecz['nazwaGoscia'].'</td>'); ?></tr>
          <?php endforeach; ?>
-     </ul>
+     </table>
 </div>

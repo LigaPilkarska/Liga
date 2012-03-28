@@ -34,5 +34,11 @@ class Mecze_model extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    
+    public function pobierz_wydarzenia($idDruzyny, $idMecze) {
+        $sql = 'SELECT zawodnicy.idZawodnika, imieZawodnika, nazwiskoZawodnika, zdarzenie, minuta FROM zawodnicy INNER JOIN wydarzenia ON zawodnicy.idZawodnika=wydarzenia.idZawodnika WHERE idMeczu='.$idMecze.' AND idDruzyny='.$idDruzyny.' ORDER BY zdarzenie, minuta';
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

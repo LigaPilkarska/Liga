@@ -43,14 +43,16 @@ class Mecz extends CI_Controller {
             $data['lang'] = 'pl';
             $data['mecz'] = $this->mecze_model->pobierz_mecz($idMeczu);
             
-            foreach($data['mecz'] as $mecz) {
-                $idLigi = $mecz['idLigi'];
-                $idGospodarza = $mecz['idGospodarza'];
-                $idGoscia = $mecz['idGoscia'];
-            }
-                            echo $idGoscia; echo $idGospodarza;
+            $idLigi = $data['mecz']->idLigi;
+            $idGospodarza = $data['mecz']->idGospodarza;
+            $idGoscia = $data['mecz']->idGoscia;
+                            
             $data['ucz_gosp'] = $this->mecze_model->pobierz_uczestnictwa($idGospodarza, $idMeczu);
             $data['ucz_gosc'] = $this->mecze_model->pobierz_uczestnictwa($idGoscia, $idMeczu);
+            
+            $data['wyd_gosp'] = $this->mecze_model->pobierz_wydarzenia($idGospodarza, $idMeczu);
+            $data['wyd_gosc'] = $this->mecze_model->pobierz_wydarzenia($idGoscia, $idMeczu);
+            
             $data['opcje'] = array('mecz/mecze_druzyny/'.$idGospodarza=>'Mecze gospodarza', 'mecz/mecze_druzyny/'.$idGoscia=>'Mecze gościa', 'mecz/mecze_ligi/'.$idLigi=>'Mecze w lidze');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');

@@ -8,20 +8,44 @@
     Wynik: <?=$mecz->bramkiGospodarza.' - '.$mecz->bramkiGoscia ?> <br />
     Sędzia: <?=$mecz->sedzia ?> <br />
 
+<div class="kontener_uczestnictw">
 <div class="uczestnictwa">
-    <ul>
-         <li>Uczestnictwa drużyny <?=$mecz->nazwaGospodarza ?></li>
+    <table>
+         <caption>Uczestnictwa drużyny <?=$mecz->nazwaGospodarza ?></caption>
+         <tr><th>Nazwisko</th><th>Imię</th><th>Pozycja</th><th>Wejście</th><th>Zejście</th><tr>
          <?php foreach($ucz_gosp as $ucz): ?>
-         <li><?=$ucz['nazwiskoZawodnika'].' '.$ucz['imieZawodnika'].' '.$ucz['pozycja'].' '.$ucz['wejscie'].' '.$ucz['zejscie'] ?></li>
+         <tr><td><?=$ucz['nazwiskoZawodnika'] ?></td><td><?=$ucz['imieZawodnika'] ?></td><td><?=$ucz['pozycja'] ?></td><td><?=$ucz['wejscie'] ?></td><td><?=$ucz['zejscie'] ?></td></tr>
          <?php endforeach; ?>
-     </ul>
+     </table>
 </div>
 <div class="uczestnictwa">
-    <ul>
-         <li>Uczestnictwa drużyny <?=$mecz->nazwaGoscia ?></li>
+    <table>
+         <caption>Uczestnictwa drużyny <?=$mecz->nazwaGoscia ?></caption>
+         <tr><th>Nazwisko</th><th>Imię</th><th>Pozycja</th><th>Wejście</th><th>Zejście</th><tr>
          <?php foreach($ucz_gosc as $ucz): ?>
-         <li><?=$ucz['nazwiskoZawodnika'].' '.$ucz['imieZawodnika'].' '.$ucz['pozycja'].' '.$ucz['wejscie'].' '.$ucz['zejscie'] ?></li>
+         <tr><td><?=$ucz['nazwiskoZawodnika'] ?></td><td><?=$ucz['imieZawodnika'] ?></td><td><?=$ucz['pozycja'] ?></td><td><?=$ucz['wejscie'] ?></td><td><?=$ucz['zejscie'] ?></td></tr>
          <?php endforeach; ?>
-     </ul>
+     </table>
+</div>
+</div>
+<div class="kontener_uczestnictw">
+<div class="uczestnictwa">
+    <table>
+         <caption>Wydarzenia drużyny <?=$mecz->nazwaGospodarza ?></caption>
+         <tr><th>Nazwisko</th><th>Imię</th><th>Zdarzenie</th><th>Minuta</th><tr>
+         <?php foreach($wyd_gosp as $ucz): ?>
+         <tr><td><?=$ucz['nazwiskoZawodnika'] ?></td><td><?=$ucz['imieZawodnika'] ?></td><td><?=$ucz['zdarzenie'] ?></td><td><?=$ucz['minuta'] ?></td></tr>
+         <?php endforeach; ?>
+     </table>
+</div>
+<div class="uczestnictwa">
+    <table>
+         <caption>Wydarzenia drużyny <?=$mecz->nazwaGoscia ?></caption>
+         <tr><th>Nazwisko</th><th>Imię</th><th>Zdarzenie</th><th>Minuta</th><tr>
+         <?php foreach($wyd_gosc as $ucz): ?>
+         <tr><td><?=$ucz['nazwiskoZawodnika'] ?></td><td><?=$ucz['imieZawodnika'] ?></td><td><?=$ucz['zdarzenie'] ?></td><td><?=$ucz['minuta'] ?></td></tr>
+         <?php endforeach; ?>
+     </table>
+</div>
 </div>
 </div>

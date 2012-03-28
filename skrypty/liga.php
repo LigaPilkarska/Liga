@@ -19,8 +19,13 @@ $query = 'SELECT * FROM ligi WHERE wojewodztwo="'.$_POST['idLigi'].'"';
 $wynik = mysql_query($query);
 //mysql_query('SET NAMES latin2');
 echo '<h3>'.$_POST['idLigi'].'</h3>';
+$r=0;
+    while($r<10000000) {
+        $r++;
+    }
 if(mysql_num_rows($wynik)>0) {
     echo '<ul>';
+    
     while($r = mysql_fetch_assoc($wynik)) {
         echo '<li><a href = "http://localhost/liga/index.php/liga/wybor/'.$r['idLigi'].'">Klasa:'.$r['klasa'].' / Grupa: '.$r['grupa'].'</a></li>';
     }

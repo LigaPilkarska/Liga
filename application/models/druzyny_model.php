@@ -21,5 +21,11 @@ class Druzyny_model extends CI_Model {
         return $query->result_array();
     }
     
+    public function pobierzTabele($idLigi) {
+        $sql = 'SELECT idDruzyny, nazwaDruzyny FROM druzyny WHERE idLigi='.$idLigi;
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    
 }
 ?>

@@ -33,7 +33,7 @@ class Liga extends CI_Controller {
             $data['wpisy'] = $this->wpisy_model->pobierz_newsy('liga', $idLigi);
             $data['wpisy2'] = $this->wpisy_model->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
             $this->load->view('szablony/default/header', $data);
             
             $this->load->view('szablony/default/menu');
@@ -50,13 +50,28 @@ class Liga extends CI_Controller {
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny_model->pobierzDruzyny($idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');
             $this->load->view('szablony/default/lista_druzyn_view');
             $this->load->view('szablony/default/footer');
 	}
+        
+        public function tabela($idLigi) {
+            $data['title'] = 'Tytuł';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['druzyny'] = $this->druzyny_model->pobierzTabele($idLigi);
+            $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/liga_view');
+            $this->load->view('szablony/default/tabela_view');
+            $this->load->view('szablony/default/footer');
+        }
 }
 
 /*
