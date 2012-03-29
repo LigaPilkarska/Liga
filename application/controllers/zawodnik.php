@@ -19,7 +19,7 @@ class Zawodnik extends CI_Controller {
                 $idDruzyny = $zawodnik['idDruzyny'];
             }
             $data['druzyna'] = $this->druzyny_model->pobierzDane($idDruzyny);
-            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'main/2'=>'Rozegrane mecze');
+            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny=>'Rozegrane mecze');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zawodnik_view');

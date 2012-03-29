@@ -61,6 +61,17 @@
         padding-top: 50px;
         
 }
+
+#TRESC table {
+    width:520px;
+}
+
+#TRESC table a {
+    text-decoration:underline;
+    color:#7C7C7C;
+    font-size:11px;
+}
+
 .news_kontener{
         padding-bottom: 30px;
 }

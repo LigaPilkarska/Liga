@@ -33,7 +33,7 @@
         });
     $(document).ready(function(){
         
-        $('#mapa_wojewodztw > area').click(function(){
+        $('area').click(function(){
             $('div#info').ajaxStart(function() {
                 $(this).html('');
                 $(this).toggleClass('ajax_loader');
@@ -41,15 +41,16 @@
            .ajaxStop(function() {
                 $(this).toggleClass('ajax_loader');
            });
-            
-            var val = $(this).attr('href');
-            $.post('../../skrypty/liga.php', {'idLigi':val}, function(e) { 
+           
+           var val = $(this).attr('href');
+                     
+           $.post('http://localhost/Liga/skrypty/liga.php', {'idLigi':val}, function(e) { 
                $('div#info').html(e);
             });
             return false;
         });
         
-        
+        var val = $(this).attr('href');
     
          /*$('#loader').insertBefore('div#info')
           .ajaxStart(function() {
