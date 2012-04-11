@@ -81,6 +81,103 @@ class Zarzadzaj extends CI_Controller {
         function usunUzytk($idUzytk){
             $this->uzytkownicy_model->usunUzytkownika($idUzytk);
         }
+        
+        public function ligi() {
+            $data['title'] = 'Panel Administracyjny - zarządzaj ligami';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['ligi'] = $this->ligi_model->pobierz_ligi();
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_ligami_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        public function liga($idLigi=-1) {
+            $data['title'] = 'Panel Administracyjny - dodaj/usuń ligę';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['ligi'] = $this->ligi_model->pobierz_ligi();
+           // $data['druzyny'] = $this->druzyny_model->dajWszystkieDruzyny();
+            
+            $data['liga'] = $this->ligi_model->dajLige($idLigi);
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_ligami_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        function dodajLige(){
+            $wojewodztwo = $this->input->post('wojewodztwo_input');
+            $klasa = $this->input->post('klasa_select');
+            $grupa = $this->input->post('grupa_input');
+            $rok = $this->input->post('rok_input');
+            $this->ligi_model->dodajLige($wojewodztwo, $klasa, $grupa, $rok);
+            redirect(base_url().'index.php/zarzadzaj/ligi');
+        }
+        
+        function edytujLige($idLigi){
+            $wojewodztwo = $this->input->post('wojewodztwo_input');
+            $klasa = $this->input->post('klasa_select');
+            $grupa = $this->input->post('grupa_input');
+            $rok = $this->input->post('rok_input');
+            $this->ligi_model->edytujLige($idLigi, $wojewodztwo, $klasa, $grupa, $rok);
+            redirect(base_url().'index.php/zarzadzaj/ligi');
+        }
+        
+        function usunLige($idLigi){
+            $this->ligi_model->usunLige($idLigi);
+        }
+        
+        public function druzyny() {
+            $data['title'] = 'Panel Administracyjny - zarządzaj drużynami';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['druzyny'] = $this->druzyny_model->dajWszystkieDruzyny();
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_druz_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        public function druzyna($idDruzyny=-1) {
+            $data['title'] = 'Panel Administracyjny - dodaj/usuń drużynę';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';            
+            $data['druzyna'] = $this->druzyny_model->dajDruzyne($idDruzyny);
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_druz_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        function dodajDruzyne(){
+            $nazwa = $this->input->post('nazwa_input');
+            $prezes = $this->input->post('prezes_input');
+            $stadion = $this->input->post('stadion_input');
+            $this->druzyny_model->dodajDruzyne($nazwa, $prezes, $stadion);
+            redirect(base_url().'index.php/zarzadzaj/druzyny');
+        }
+        
+        function edytujDruzyne($idDruzyny){
+            $nazwa = $this->input->post('nazwa_input');
+            $prezes = $this->input->post('prezes_input');
+            $stadion = $this->input->post('stadion_input');
+            $this->druzyny_model->edytujDruzyne($idDruzyny, $nazwa, $prezes, $stadion);
+            redirect(base_url().'index.php/zarzadzaj/druzyny');
+        }
+        
+        function usunDruzyne($idDruzyny){
+            $this->druzyny_model->usunDruzyne($idDruzyny);
+        }
 }
 
 ?>

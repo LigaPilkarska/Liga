@@ -102,6 +102,52 @@
             return false;
             }
         });
+        
+        $('a.usun_lige').click(function(){
+            if (confirm('Czy na pewno usunac?')){
+                $('table').ajaxStart(function() {
+                    //$(this).html('');
+                    $(this).toggleClass('ajax_loader');
+               })
+               .ajaxStop(function() {
+                    $(this).toggleClass('ajax_loader');
+               });
+
+               var val = $(this).attr('href'); 
+
+               $.post('usunLige/' + val, {'idLigi':val}, function(e) { 
+                   setInterval(function(){
+                    window.location = 'ligi';
+                    });
+                });
+                return false;
+            }else{
+            return false;
+            }
+        });
+        
+        $('a.usun_druzyne').click(function(){
+            if (confirm('Czy na pewno usunac?')){
+                $('table').ajaxStart(function() {
+                    //$(this).html('');
+                    $(this).toggleClass('ajax_loader');
+               })
+               .ajaxStop(function() {
+                    $(this).toggleClass('ajax_loader');
+               });
+
+               var val = $(this).attr('href'); 
+
+               $.post('usunDruzyne/' + val, {'idDruzyny':val}, function(e) { 
+                   setInterval(function(){
+                    window.location = 'druzyny';
+                    });
+                });
+                return false;
+            }else{
+            return false;
+            }
+        });
     });
     </script>
     

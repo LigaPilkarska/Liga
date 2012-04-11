@@ -15,6 +15,12 @@ class Druzyny_model extends CI_Model {
         return $query->row();
     }
     
+    public function dajDruzyne($idDruzyny) {
+        $this->db->where('idDruzyny', $idDruzyny);
+        $query = $this->db->get('druzyny');
+        return $query->result_array();
+    }
+    
     public function pobierzDruzyny($idLigi) {
         $this->db->where('idLigi', $idLigi);
         $query = $this->db->get('druzyny');
@@ -32,6 +38,22 @@ class Druzyny_model extends CI_Model {
     public function dajWszystkieDruzyny() {
         $query = $this->db->get('druzyny');
         return $query->result_array();
+    }
+    
+    public function dodajDruzyne($nazwa, $prezes, $stadion) {
+        $query = 'INSERT INTO druzyny (nazwaDruzyny, prezes, stadion, idLigi) VALUES ("'.$nazwa.'", "'.$prezes.'", "'.$stadion.'", 1)';
+        $wynik = $this->db->query($query);
+    }
+    
+    public function edytujDruzyne($idDruzyny, $nazwa, $prezes, $stadion) {
+        $query = 'UPDATE druzyny SET nazwaDruzyny="'.$nazwa.'", prezes="'.$prezes.'", stadion="'.$stadion.'" WHERE idDruzyny='.$idDruzyny;
+        $wynik = $this->db->query($query);
+    }
+    
+    public function usunDruzyne($idDruzyny) {
+        $query = 'DELETE FROM druzyny WHERE idDruzyny='.$idDruzyny;
+        $wynik = $this->db->query($query);
+        //return $wynik->row();
     }
     
 }

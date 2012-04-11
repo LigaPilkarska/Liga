@@ -25,7 +25,7 @@
                                 if($czyAdmin=='admin_global') {
                                     echo anchor('zarzadzaj/ligi', 'Zarządzaj ligami').'<br />';
                                     echo anchor('zarzadzaj/uzytkownicy', 'Zarządzaj użytkownikami').'<br />';
-                                    echo anchor('zarzadzaj/wpisy', 'Zarządzaj wpisami').'<br />';
+                                    echo anchor('zarzadzaj/druzyny', 'Zarządzaj drużynami').'<br />';
                                 }
                             ?>
                             </div>
