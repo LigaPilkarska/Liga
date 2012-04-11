@@ -6,10 +6,33 @@
                 <?php foreach($opcje as $key => $wartosc) {
                         echo anchor($key, $wartosc);
                         echo '<br />';
-                      } 
+                      }
+                    $czyAdmin = $this->session->userdata('uprawnienie');
+                    if(isset($czyAdmin) && ($czyAdmin=='admin_global' || $czyAdmin=='admin' || $czyAdmin=='trener')) {
+                        echo anchor('zarzadzaj/index', 'Panel administracyjny').'<br />';
+                    }
                 ?>
-                </div>
-            </div>
+                </div><br />
+            
+             
+            <?php $czyAdmin = $this->session->userdata('uprawnienie');
+                    if(isset($czyAdmin) && ($czyAdmin=='admin_global' || $czyAdmin=='admin' || $czyAdmin=='trener')) { ?>    
+                        
+                            <div id="MENU_NAGLOWEK">ZARZĄDZAJ </div><hr />
+                            <div id="MENU_ZAWARTOSC">
+                            <?php 
+                                $czyAdmin = $this->session->userdata('uprawnienie');
+                                if($czyAdmin=='admin_global') {
+                                    echo anchor('zarzadzaj/ligi', 'Zarządzaj ligami').'<br />';
+                                    echo anchor('zarzadzaj/uzytkownicy', 'Zarządzaj użytkownikami').'<br />';
+                                    echo anchor('zarzadzaj/wpisy', 'Zarządzaj wpisami').'<br />';
+                                }
+                            ?>
+                            </div>
+                            <?php               
+                       }?>
+                       </div>     
+                
             <div id="INFORMACJE">
                 <!--<div id="MENU_NAGLOWEK">TWOJE KONTO</div><hr />-->
                 <?php
@@ -59,8 +82,8 @@
                     echo form_open(site_url() .'/'. 'admin', array('id'=>'form_logowania', 'class'=>'form_logowania'));
                     echo form_fieldset("Twoje konto", array('class' => 'form_logowania_fieldset'));
                     //echo '<p>';
-                    echo 'Zalogowany jako ' .  $this->session->userdata('login') . ' o id: ';
-                    echo $this->session->userdata('session_id') . ' i adresie email: ' . $this->session->userdata('email');
+                    echo 'Zalogowany jako ' .  $this->session->userdata('login');
+                    echo '<br />Twój adres email: <a href="mailto:' . $this->session->userdata('email').'">'.$this->session->userdata('email').'</a>';
                     echo '<br /><br />';
                     echo form_submit('edytuj', 'Edytuj konto');
                     echo '<br /><br />' . anchor(site_url().'/admin/wyloguj', 'Wyloguj się');

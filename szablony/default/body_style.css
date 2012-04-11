@@ -218,4 +218,17 @@ img {
 div#info {
         min-height: 30px;
 }
+.form_dodawania_uzytk {
+        text-align: center;
+}
+.form_dodawania_uzytk_fieldset legend {
+        font-size: 14px;
+        color: gray;
+}
+.form_dodawania_uzytk_fieldset {
+        border-top: 1px solid whitesmoke;
+        border-bottom: 2px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+}
 

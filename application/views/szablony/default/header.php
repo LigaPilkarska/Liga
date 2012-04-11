@@ -78,6 +78,30 @@
             });
             return false;
         });
+        
+        
+        $('a.usun_uzytk').click(function(){
+            if (confirm('Czy na pewno usunac?')){
+                $('table').ajaxStart(function() {
+                    //$(this).html('');
+                    $(this).toggleClass('ajax_loader');
+               })
+               .ajaxStop(function() {
+                    $(this).toggleClass('ajax_loader');
+               });
+
+               var val = $(this).attr('href'); 
+
+               $.post('usunUzytk/' + val, {'idLigi':val}, function(e) { 
+                   setInterval(function(){
+                    window.location = 'uzytkownicy';
+                    });
+                });
+                return false;
+            }else{
+            return false;
+            }
+        });
     });
     </script>
     

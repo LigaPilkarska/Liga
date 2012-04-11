@@ -9,17 +9,17 @@ class Zawodnik extends CI_Controller {
             
         }
         
-        public function wybor($idZawodnika) {
+        public function wybor($idZawodnika, $idLigi) {
             $data['title'] = 'Tytuł';
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['zawodnik'] = $this->zawodnicy_model->pobierz_zawodnika($idZawodnika);
+            $data['zawodnik'] = $this->zawodnicy_model->pobierz_zawodnika($idZawodnika, $idLigi);
             foreach($data['zawodnik'] as $zawodnik) {
                 $idDruzyny = $zawodnik['idDruzyny'];
             }
             $data['druzyna'] = $this->druzyny_model->pobierzDane($idDruzyny);
-            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'main/1'=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny=>'Rozegrane mecze');
+            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny.'/'.$idLigi=>'Rozegrane mecze');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zawodnik_view');

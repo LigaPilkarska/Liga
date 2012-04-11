@@ -8,15 +8,15 @@ class Zawodnicy_model extends CI_Model {
         $this->db->query('SET NAMES utf8');
     }
     
-    public function pobierz_zawodnikow($idDruzyny) {
+    public function pobierz_zawodnikow($idDruzyny, $idLigi) {
         $this->db->where('idDruzyny', $idDruzyny);
-        $query = $this->db->get('zawodnicy');
+        $query = $this->db->get('zawodnicy'.$idLigi);
         return $query->result_array();
     }
     
-    public function pobierz_zawodnika($idZawodnika) {
+    public function pobierz_zawodnika($idZawodnika, $idLigi) {
         $this->db->where('idZawodnika', $idZawodnika);
-        $query = $this->db->get('zawodnicy');
+        $query = $this->db->get('zawodnicy'.$idLigi);
         return $query->row();
     }
     

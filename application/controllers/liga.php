@@ -30,6 +30,7 @@ class Liga extends CI_Controller {
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
+            $data['idLigi'] = $idLigi;
             $data['wpisy'] = $this->wpisy_model->pobierz_newsy('liga', $idLigi);
             $data['wpisy2'] = $this->wpisy_model->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);

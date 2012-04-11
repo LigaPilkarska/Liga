@@ -22,7 +22,7 @@ class Druzyna extends CI_Controller {
             foreach($data['nazwa'] as $wpis) {
                 $idLigi = $wpis['idLigi'];
             }
-            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny=>'Rozegrane mecze', 'liga/druzyny/'.$idLigi=>'Drużyny');
+            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny.'/'.$idLigi=>'Rozegrane mecze', 'liga/druzyny/'.$idLigi=>'Drużyny');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/druzyna_view');
@@ -35,12 +35,13 @@ class Druzyna extends CI_Controller {
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['zawodnicy'] = $this->zawodnicy_model->pobierz_zawodnikow($idDruzyny);
             $data['dr'] = $this->druzyny_model->pobierzDane($idDruzyny);
             foreach($data['dr'] as $wpis) {
                 $idLigi = $wpis['idLigi'];
             }
-            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny=>'Rozegrane mecze', 'liga/druzyny/'.$idLigi=>'Drużyny');
+            $data['idLigi'] = $idLigi;
+            $data['zawodnicy'] = $this->zawodnicy_model->pobierz_zawodnikow($idDruzyny, $idLigi);
+            $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny.'/'.$idLigi=>'Rozegrane mecze', 'liga/druzyny/'.$idLigi=>'Drużyny');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/lista_zawodnikow_view');

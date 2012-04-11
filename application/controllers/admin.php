@@ -33,7 +33,7 @@ class Admin extends CI_Controller {
                 }
                 else {
                     $newdata = array(
-                       //'session_id' => time() . $wynik->id,
+                       'konto_id' => $wynik->idKonta,
                        'login'  => $wynik->login,
                        'email'     => $wynik->mail,
                        'uprawnienie' => $wynik->uprawnienie
