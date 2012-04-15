@@ -31,21 +31,21 @@
                     echo form_label('Nazwa drużyny', 'nazwa_input', $nazwa_label_data).'<br />';
                     
                     $nazwa_data = array('class' => 'errors', 'name' => 'nazwa_input', 'id' => 'nazwa_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($nazwa_data).'<br />';
                            
                     $prezes_label_data = array('class' => 'errors');
                     echo form_label('Prezes', 'prezes_input', $prezes_label_data).'<br />';
                     
                     $prezes_data = array('name' => 'prezes_input', 'id' => 'prezes_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($prezes_data).'<br />';
                     
                     $stadion_label_data = array('class' => 'errors');
                     echo form_label('Stadion', 'stadion_input', $stadion_label_data).'<br />';
                     
                     $stadion_data = array('class' => 'errors', 'name' => 'stadion_input', 'id' => 'stadion_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($stadion_data).'<br />';
                     
                     echo '<br /><br />';
@@ -62,21 +62,21 @@
                     echo form_label('Nazwa drużyny', 'nazwa_input', $nazwa_label_data).'<br />';
                     
                     $nazwa_data = array('class' => 'errors', 'name' => 'nazwa_input', 'id' => 'nazwa_input', 'value' => $liga['nazwaDruzyny'],
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($nazwa_data).'<br />';
                     
                     $prezes_label_data = array('class' => 'errors');
                     echo form_label('Prezes', 'prezes_input', $prezes_label_data).'<br />';
                     
                     $prezes_data = array('class' => 'errors', 'name' => 'prezes_input', 'id' => 'prezes_input', 'value' => $liga['prezes'],
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($prezes_data).'<br />';
                     
                     $stadion_label_data = array('class' => 'errors');
                     echo form_label('Stadion', 'stadion_input', $stadion_label_data).'<br />';
                     
                     $stadion_data = array('class' => 'errors', 'name' => 'stadion_input', 'id' => 'stadion_input', 'value' => $liga['stadion'],
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
                     echo form_input($stadion_data).'<br />';
                     
                     echo '<br /><br />';
