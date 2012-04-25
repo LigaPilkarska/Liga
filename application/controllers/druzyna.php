@@ -64,5 +64,12 @@ class Druzyna extends CI_Controller {
             $this->load->view('szablony/default/druzyna_opis_view');
             $this->load->view('szablony/default/footer');
         }
+        
+        public function dodajNews($druzyna) {
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->wstaw_newsa_druzyna($login, $email, $druzyna);
+            redirect(base_url().'index.php/druzyna/wybor/'.$druzyna);
+        }
 }
 ?>

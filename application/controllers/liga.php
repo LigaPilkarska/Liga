@@ -73,6 +73,13 @@ class Liga extends CI_Controller {
             $this->load->view('szablony/default/tabela_view');
             $this->load->view('szablony/default/footer');
         }
+        
+        public function dodajNews($liga) {
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->wstaw_newsa_liga($login, $email, $liga);
+            redirect(base_url().'index.php/liga/wybor/'.$liga);
+        }
 }
 
 /*

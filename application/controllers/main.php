@@ -28,6 +28,7 @@ class Main extends CI_Controller {
         
         public function wpis($idWpisu){
             $data['wpisy'] = $this->wpisy_model->pobierz_wpis($idWpisu);
+            $data['komentarze'] = $this->wpisy_model->pobierz_komentarze($idWpisu);
             foreach($data['wpisy'] as $temp){
                 $data['title'] = $temp['tytul'].' - '.$temp['login'];
             }
@@ -50,6 +51,25 @@ class Main extends CI_Controller {
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/pokaz_wpis_view');
             $this->load->view('szablony/default/footer');
+        }
+        
+        public function dodajNews() {
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->wstaw_newsa($login, $email);
+            redirect(base_url().'index.php/main/index');
+        }
+        
+        function usunNews($idWpisu){
+            echo 'dziala';
+            $this->wpisy_model->usun_wpis($idWpisu);
+        }
+        
+        public function dodajKomentarz($idWpisu) {
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->wstaw_komentarz($login, $email, $idWpisu);
+            redirect(base_url().'index.php/main/wpis/'.$idWpisu);
         }
 }
 

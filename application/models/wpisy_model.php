@@ -47,19 +47,55 @@ class Wpisy_model extends CI_Model {
         return $query->result_array();
     }
     
-    public function wstaw_newsa($slug='strona'){
-        if($slug=='strona') {
+    public function wstaw_newsa($tytul, $tresc){
             $data = array(
-    'tytul' => 'Wódka, papierochy i drugi' ,
-    'wpis' => 'ble ble lbe lsa ajs asjkg asj gnajs gnasj ngas; asl; gasl glasg ajsng jasn gjasn jgnas g
-         akdgladn gladk gmadlk gmladk mgadl mgdam gkad mgkadmk gmadk; gmad; g
-         sa ka gjah gja kglad gjadj ghjadh gjadhj ghjadh gjadh gjdah jg adgh jadh gkjadhg kjhadjk hgjadhj 
-         ajdghkjadhgk adj gad eia er ea jgieaj hgeq ojkehqij hi al;igj aw jgiawj giajw igjaiijij [ alga g
-         ljlh tro h[ uk, lhmi tm;j;lkmj ae fkae la;fhm karm h;ae p[hgakeh;ae h;ea]' ,
-    'idKonta' => 1);
+    'tytul' => $tytul ,
+    'wpis' => $tresc ,
+    'idKonta' => $this->session->userdata('konto_id'));
 
             $this->db->insert('wpisy', $data);
-        }
+    }
+    
+    public function wstaw_newsa_liga($tytul, $tresc, $liga){
+            $data = array(
+    'tytul' => $tytul ,
+    'wpis' => $tresc ,
+    'idLigi' => $liga,
+    'idKonta' => $this->session->userdata('konto_id'));
+
+            $this->db->insert('wpisy', $data);
+    }
+    
+    public function wstaw_newsa_druzyna($tytul, $tresc, $druzyna){
+            $data = array(
+    'tytul' => $tytul ,
+    'wpis' => $tresc ,
+    'idDruzyny' => $druzyna,
+    'idKonta' => $this->session->userdata('konto_id'));
+
+            $this->db->insert('wpisy', $data);
+    }
+    
+    public function usun_wpis($idWpisu) {
+        $query = 'DELETE FROM wpisy WHERE idWpisu='.$idWpisu;
+        echo $query;
+        $wynik = $this->db->query($query);
+    }
+    
+    public function pobierz_komentarze($idWpisu) {
+        $this->db->where('idWpisu', $idWpisu);
+        $query = $this->db->get('komentarze');
+        return $query->result_array();
+    }
+    
+    public function wstaw_komentarz($autor, $tresc, $idWpisu){
+            $data = array(
+    'komentarz' => $tresc ,
+    'autor' => $autor ,
+    'idWpisu' => $idWpisu,
+    'ipAutora' => 0);
+
+            $this->db->insert('komentarze', $data);
     }
 }
 ?>
