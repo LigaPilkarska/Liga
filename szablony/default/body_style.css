@@ -156,6 +156,11 @@
 #WOJEWODZTWA {
         background: none;
 }
+
+area:active, area:visited, area:link {
+    border:none;
+}
+
 #WOJEWODZTWA a { 
         text-decoration:underline; 
         color:#8CA800;

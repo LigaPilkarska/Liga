@@ -77,8 +77,9 @@ class Wpisy_model extends CI_Model {
     }
     
     public function usun_wpis($idWpisu) {
+        $query = 'DELETE FROM komentarze WHERE idWpisu='.$idWpisu;
+        $this->db->query($query);
         $query = 'DELETE FROM wpisy WHERE idWpisu='.$idWpisu;
-        echo $query;
         $wynik = $this->db->query($query);
     }
     
@@ -96,6 +97,37 @@ class Wpisy_model extends CI_Model {
     'ipAutora' => 0);
 
             $this->db->insert('komentarze', $data);
+    }
+    
+    public function edytujKomentarz($idKomentarza, $autor, $komentarz) {
+        $query = 'UPDATE komentarze SET autor="'.$autor.'", komentarz="'.$komentarz.'" WHERE idKomentarza='.$idKomentarza;
+        $wynik = $this->db->query($query);
+    }
+    
+    public function dajKomentarz($idKomentarza) {
+        $query = 'SELECT idKomentarza, idWpisu, komentarz, autor FROM komentarze WHERE idKomentarza = '.$idKomentarza;
+        //$this->db->select('idKonta, login, uprawnienie, mail');
+        //$query = $this->db->get('konta');
+        $wynik = $this->db->query($query);
+        return $wynik->result_array();
+    }
+    
+    public function dajWpis($idKomentarza) {
+        $query = 'SELECT idWpisu, tytul, wpis FROM wpisy WHERE idWpisu = '.$idKomentarza;
+        //$this->db->select('idKonta, login, uprawnienie, mail');
+        //$query = $this->db->get('konta');
+        $wynik = $this->db->query($query);
+        return $wynik->result_array();
+    }
+    
+    public function edytujWpis($idKomentarza, $autor, $komentarz) {
+        $query = 'UPDATE wpisy SET tytul="'.$autor.'", wpis="'.$komentarz.'" WHERE idWpisu='.$idKomentarza;
+        $wynik = $this->db->query($query);
+    }
+    
+    public function usun_komentarz($idKomentarza) {
+        $query = 'DELETE FROM komentarze WHERE idKomentarza='.$idKomentarza;
+        $wynik = $this->db->query($query);
     }
 }
 ?>

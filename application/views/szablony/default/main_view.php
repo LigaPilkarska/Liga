@@ -42,7 +42,7 @@
                       <h1>
                            <?=$wpis['tytul'] ?>
                           <?php if(isset($czyAdmin) && ($czyAdmin=='admin_global' || $czyAdmin=='admin' || $czyAdmin=='trener'))
-                          echo '<a href=""><img src="'.base_url().'szablony/default/images/b_edit.png" /></a> <a href="'.$wpis['idWpisu'].'" class="usun_news"><img src="'.base_url().'szablony/default/images/b_del.png" /></a>'; ?>
+                          echo '<a href="'.base_url().'index.php/main/edytujWpisy/'.$wpis['idWpisu'].'"><img src="'.base_url().'szablony/default/images/b_edit.png" /></a> <a href="'.$wpis['idWpisu'].'" class="usun_news"><img src="'.base_url().'szablony/default/images/b_del.png" /></a>'; ?>
                       </h1>
                         
                     </div>

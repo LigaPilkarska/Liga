@@ -60,6 +60,27 @@ class Main extends CI_Controller {
             redirect(base_url().'index.php/main/index');
         }
         
+        public function edytujWpisy($idWpisu){
+            $data['title'] = 'Panel Administracyjny - dodaj/usuń wpis';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['wpis'] = $this->wpisy_model->dajWpis($idWpisu);
+            
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_wpisami_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        function edytujWpis($idWpisu){
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->edytujWpis($idWpisu, $login, $email);
+            redirect(base_url().'index.php/main/wpis/'.$idWpisu);
+        }
+        
         function usunNews($idWpisu){
             echo 'dziala';
             $this->wpisy_model->usun_wpis($idWpisu);
@@ -70,6 +91,31 @@ class Main extends CI_Controller {
             $email = $this->input->post('email_input');
             $this->wpisy_model->wstaw_komentarz($login, $email, $idWpisu);
             redirect(base_url().'index.php/main/wpis/'.$idWpisu);
+        }
+        
+        public function edytujKomentarz($idWpisu){
+            $data['title'] = 'Panel Administracyjny - dodaj/usuń komentarz';
+            $data['description'] = 'To jest przykładowy opis.';
+            $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            $data['lang'] = 'pl';
+            $data['komentarz'] = $this->wpisy_model->dajKomentarz($idWpisu);
+            
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/menu');
+            $this->load->view('szablony/default/zarzadzaj_kom_view');
+            $this->load->view('szablony/default/footer');
+        }
+        
+        function edytujKomentarze($idKom, $idWpisu){
+            $login = $this->input->post('login_input');
+            $email = $this->input->post('email_input');
+            $this->wpisy_model->edytujKomentarz($idKom, $login, $email);
+            redirect(base_url().'index.php/main/wpis/'.$idWpisu);
+        }
+        
+        function usunKomentarz($idKomentarza){
+            $this->wpisy_model->usun_komentarz($idKomentarza);
         }
 }
 

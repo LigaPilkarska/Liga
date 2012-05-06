@@ -31,7 +31,7 @@
                         <div class="news_author_data">Dodał: <?=$wpis['autor'] ?>
                         <?php $czyAdmin = $this->session->userdata('uprawnienie');
                         if(isset($czyAdmin) && ($czyAdmin=='admin_global' || $czyAdmin=='admin' || $czyAdmin=='trener'))
-                          echo '<a href=""><img src="'.base_url().'szablony/default/images/b_edit.png" /></a> <a href="'.$wpis['idKomentarza'].'" class="usun_kom"><img src="'.base_url().'szablony/default/images/b_del.png" /></a>'; ?>
+                          echo '<a href="'.base_url() .'index.php/'. 'main/edytujKomentarz/'.$wpis['idKomentarza'].'"><img src="'.base_url().'szablony/default/images/b_edit.png" /></a> <a href="'.$wpis['idKomentarza'].'" alt="'.$wpis['idWpisu'].'" class="usun_kom"><img src="'.base_url().'szablony/default/images/b_del.png" /></a>'; ?>
                         </div>
                     </div><br /><br />
                     <hr />

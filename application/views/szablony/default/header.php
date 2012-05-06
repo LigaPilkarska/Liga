@@ -151,7 +151,7 @@
         
         $('a.usun_news').click(function(){
             if (confirm('Czy na pewno usunac?')){
-                $('table').ajaxStart(function() {
+                $('div#TRESC').ajaxStart(function() {
                     //$(this).html('');
                     $(this).toggleClass('ajax_loader');
                })
@@ -160,10 +160,33 @@
                });
 
                var val = $(this).attr('href'); 
-
                $.post('usunNews/' + val, {'idWpisu':val}, function(e) { 
                    setInterval(function(){
-                    window.location = 'gowno';
+                    window.location = 'index';
+                    });
+                });
+                return false;
+            }else{
+            return false;
+            }
+        });
+        
+        $('a.usun_kom').click(function(){
+            if (confirm('Czy na pewno usunac?')){
+                $('div#TRESC').ajaxStart(function() {
+                    //$(this).html('');
+                    $(this).toggleClass('ajax_loader');
+               })
+               .ajaxStop(function() {
+                    $(this).toggleClass('ajax_loader');
+               });
+
+               var val = $(this).attr('href');
+               
+               var val2 = $(this).attr('alt');
+               $.post('../usunKomentarz/' + val, {'idKomentarza':val}, function(e) { 
+                   setInterval(function(){
+                    window.location = val2;
                     });
                 });
                 return false;
