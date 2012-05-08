@@ -1,6 +1,6 @@
 <?php 
 if(isset($_POST['sitelang']) && $_POST['sitelang']!='') 
-    setcookie ('sitelang', $_POST['sitelang'], (time()+3600*24*7));
+    setcookie ('sitelang', $_POST['sitelang'], (time()+3600*24*7), "/");
 echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
