@@ -8,6 +8,15 @@ class Druzyna extends CI_Controller {
             $this->load->model('druzyny_model');
             $this->load->model('zawodnicy_model');
             $this->load->model('ligi_model');
+            if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
+                $this->lang->load('menu', 'english');
+                $this->lang->load('news', 'english');
+            }
+            else {
+                $this->lang->load('menu', 'polish');
+                $this->lang->load('news', 'polish');
+            }
+            $this->load->helper('language');
         }
     
          public function wybor($idDruzyny)
@@ -16,12 +25,14 @@ class Druzyna extends CI_Controller {
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
+            $data['idDruzyny'] = $idDruzyny;
             $data['wpisy'] = $this->wpisy_model->pobierz_newsy('druzyna', $idDruzyny);
             $data['wpisy2'] = $this->wpisy_model->pobierz_newsy2('druzyna', $idDruzyny);
             $data['nazwa'] = $this->druzyny_model->pobierzDane($idDruzyny);
-            foreach($data['nazwa'] as $wpis) {
-                $idLigi = $wpis['idLigi'];
+            foreach($data['nazwa'] as $oDruzynie) {
+                $idLigi = $oDruzynie['idLigi'];
             }
+            $data['idLigi'] = $idLigi;
             $data['opcje'] = array('druzyna/wybor/'.$idDruzyny=>'Newsy', 'druzyna/info/'.$idDruzyny=>'Informacje o drużynie', 'druzyna/zawodnicy/'.$idDruzyny=>'Zawodnicy', 'mecz/mecze_druzyny/'.$idDruzyny.'/'.$idLigi=>'Rozegrane mecze', 'liga/druzyny/'.$idLigi=>'Drużyny');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');

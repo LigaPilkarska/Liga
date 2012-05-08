@@ -21,6 +21,13 @@ class Druzyny_model extends CI_Model {
         return $query->result_array();
     }
     
+    public function dajListeGrup($woj, $klasa){
+        $sql = 'SELECT * FROM ligi WHERE wojewodztwo = "'.$woj.'" AND klasa = "'.$klasa.'"';
+        //echo $sql;
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    
     public function pobierzDruzyny($idLigi) {
         $this->db->where('idLigi', $idLigi);
         $query = $this->db->get('druzyny');
@@ -40,8 +47,8 @@ class Druzyny_model extends CI_Model {
         return $query->result_array();
     }
     
-    public function dodajDruzyne($nazwa, $prezes, $stadion) {
-        $query = 'INSERT INTO druzyny (nazwaDruzyny, prezes, stadion, idLigi) VALUES ("'.$nazwa.'", "'.$prezes.'", "'.$stadion.'", 1)';
+    public function dodajDruzyne($nazwa, $prezes, $stadion, $liga) {
+        $query = 'INSERT INTO druzyny (nazwaDruzyny, prezes, stadion, idLigi) VALUES ("'.$nazwa.'", "'.$prezes.'", "'.$stadion.'", '.$liga.')';
         $wynik = $this->db->query($query);
     }
     

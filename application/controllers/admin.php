@@ -5,6 +5,8 @@ class Admin extends CI_Controller {
         public function __construct() {
             parent::__construct();
             $this->load->model('admin_model');
+            $this->lang->load('menu', 'english');
+            $this->load->helper('language');
         }
         
         public function _checkLogin($login, $haslo) {
@@ -25,7 +27,7 @@ class Admin extends CI_Controller {
                     $data['lang'] = 'pl';
                     $data['login'] = $login;
                     $data['haslo'] = $haslo;
-                    $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+                    $data['opcje'] = array('main/index'=>lang('menu_option_news'), 'main/1'=> lang('menu_option_info'), 'liga/index'=>lang('menu_option_league'), 'main/2'=>lang('menu_option_contact'));
                     $this->load->view('szablony/default/header', $data);
                     $this->load->view('szablony/default/menu');
                     $this->load->view('szablony/default/admin_logowanie_view');
@@ -36,7 +38,9 @@ class Admin extends CI_Controller {
                        'konto_id' => $wynik->idKonta,
                        'login'  => $wynik->login,
                        'email'     => $wynik->mail,
-                       'uprawnienie' => $wynik->uprawnienie
+                       'uprawnienie' => $wynik->uprawnienie,
+                       'liga' => $wynik->liga,
+                       'druzyna' => $wynik->druzyna
                    );
 
                     $this->session->set_userdata($newdata);
@@ -56,7 +60,7 @@ class Admin extends CI_Controller {
                 $data['description'] = 'To jest przykładowy opis.';
                 $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
                 $data['lang'] = 'pl';
-                $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+                $data['opcje'] = array('main/index'=>lang('menu_option_news'), 'main/1'=> lang('menu_option_info'), 'liga/index'=>lang('menu_option_league'), 'main/2'=>lang('menu_option_contact'));
                 $this->load->view('szablony/default/header', $data);
                 $this->load->view('szablony/default/menu');
                 $this->load->view('szablony/default/admin_profil_view');

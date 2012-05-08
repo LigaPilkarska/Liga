@@ -1,4 +1,7 @@
-<?php echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
+<?php 
+if(isset($_POST['sitelang']) && $_POST['sitelang']!='') 
+    setcookie ('sitelang', $_POST['sitelang'], (time()+3600*24*7));
+echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
@@ -19,182 +22,16 @@
     <link rel="stylesheet" href='<?php echo base_url(); ?>szablony/default/body_style.css' type="text/css" media="screen" />
     <link rel="stylesheet" href='<?php echo base_url(); ?>szablony/default/footer_style.css' type="text/css" media="screen" />
     
+    <link rel="stylesheet" href='<?php echo base_url(); ?>szablony/loader/css/queryLoader.css' type="text/css" />
+    <script type='text/javascript' src='<?php echo base_url(); ?>szablony/loader/js/queryLoader.js'></script>
+
     <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>forms_view/assets/js/jquery.formalize.js" type="text/javascript"></script>
     
     
     
-    <script type="text/javascript">
-       $.ajaxSetup({
-            beforeSend:function(xhr) {
-                xhr.overrideMimeType('text/html; charset=utf-8');
-            }
-            //contentType: "application/x-www-form-urlencoded; charset=iso-8859-2"
-        });
-    $(document).ready(function(){
-        
-        $('area').click(function(){
-            $('div#info').ajaxStart(function() {
-                $(this).html('');
-                $(this).toggleClass('ajax_loader');
-           })
-           .ajaxStop(function() {
-                $(this).toggleClass('ajax_loader');
-           });
-           
-           var val = $(this).attr('href');
-                     
-           $.post('http://localhost/Liga/skrypty/liga.php', {'idLigi':val}, function(e) { 
-               $('div#info').html(e);
-            });
-            return false;
-        });
-        
-        var val = $(this).attr('href');
-    
-         /*$('#loader').insertBefore('div#info')
-          .ajaxStart(function() {
-            $(this).show();
-          })
-          .ajaxStop(function() {
-            $(this).hide();
-          });*/   
-    
-        
-        $('ul#WOJEWODZTWA a').click(function() {
-           
-           $('div#info').ajaxStart(function() {
-                $(this).html('');
-                $(this).toggleClass('ajax_loader');
-           })
-           .ajaxStop(function() {
-                $(this).toggleClass('ajax_loader');
-           });
-           
-           var woj = $(this).attr('title');
-                     
-           $.post('http://localhost/Liga/skrypty/liga.php', {'idLigi':woj}, function(e) { 
-               $('div#info').html(e);
-            });
-            return false;
-        });
-        
-        
-        $('a.usun_uzytk').click(function(){
-            if (confirm('Czy na pewno usunac?')){
-                $('table').ajaxStart(function() {
-                    //$(this).html('');
-                    $(this).toggleClass('ajax_loader');
-               })
-               .ajaxStop(function() {
-                    $(this).toggleClass('ajax_loader');
-               });
-
-               var val = $(this).attr('href'); 
-
-               $.post('usunUzytk/' + val, {'idLigi':val}, function(e) { 
-                   setInterval(function(){
-                    window.location = 'uzytkownicy';
-                    });
-                });
-                return false;
-            }else{
-            return false;
-            }
-        });
-        
-        $('a.usun_lige').click(function(){
-            if (confirm('Czy na pewno usunac?')){
-                $('table').ajaxStart(function() {
-                    //$(this).html('');
-                    $(this).toggleClass('ajax_loader');
-               })
-               .ajaxStop(function() {
-                    $(this).toggleClass('ajax_loader');
-               });
-
-               var val = $(this).attr('href'); 
-
-               $.post('usunLige/' + val, {'idLigi':val}, function(e) { 
-                   setInterval(function(){
-                    window.location = 'ligi';
-                    });
-                });
-                return false;
-            }else{
-            return false;
-            }
-        });
-        
-        $('a.usun_druzyne').click(function(){
-            if (confirm('Czy na pewno usunac?')){
-                $('table').ajaxStart(function() {
-                    //$(this).html('');
-                    $(this).toggleClass('ajax_loader');
-               })
-               .ajaxStop(function() {
-                    $(this).toggleClass('ajax_loader');
-               });
-
-               var val = $(this).attr('href'); 
-
-               $.post('usunDruzyne/' + val, {'idDruzyny':val}, function(e) { 
-                   setInterval(function(){
-                    window.location = 'druzyny';
-                    });
-                });
-                return false;
-            }else{
-            return false;
-            }
-        });
-        
-        $('a.usun_news').click(function(){
-            if (confirm('Czy na pewno usunac?')){
-                $('div#TRESC').ajaxStart(function() {
-                    //$(this).html('');
-                    $(this).toggleClass('ajax_loader');
-               })
-               .ajaxStop(function() {
-                    $(this).toggleClass('ajax_loader');
-               });
-
-               var val = $(this).attr('href'); 
-               $.post('usunNews/' + val, {'idWpisu':val}, function(e) { 
-                   setInterval(function(){
-                    window.location = 'index';
-                    });
-                });
-                return false;
-            }else{
-            return false;
-            }
-        });
-        
-        $('a.usun_kom').click(function(){
-            if (confirm('Czy na pewno usunac?')){
-                $('div#TRESC').ajaxStart(function() {
-                    //$(this).html('');
-                    $(this).toggleClass('ajax_loader');
-               })
-               .ajaxStop(function() {
-                    $(this).toggleClass('ajax_loader');
-               });
-
-               var val = $(this).attr('href');
-               
-               var val2 = $(this).attr('alt');
-               $.post('../usunKomentarz/' + val, {'idKomentarza':val}, function(e) { 
-                   setInterval(function(){
-                    window.location = val2;
-                    });
-                });
-                return false;
-            }else{
-            return false;
-            }
-        });
-    });
+    <script src="<?php echo base_url(); ?>szablony/js/glowny.js" type="text/javascript">
+       
     </script>
     
     <title><?php echo $title ?></title>
@@ -214,6 +51,8 @@
                             <td><?php echo anchor('#', 'Szukaj') ?></td>
                             <td><?php echo anchor('liga/index', 'Ligi') ?></td>
                             <td><?php echo anchor('#', 'Kontakt') ?></td>
+                            <td><img title="pl" class="sitelang" style="width: 40px; height: 30px" src="<?php echo base_url(); ?>szablony/default/images/pl.png" /></td>
+                                <td><img title="eng" class="sitelang" style="width: 50px; height: 25px" src="<?php echo base_url(); ?>szablony/default/images/usa.png" /></td>
                         </tr>
                     </table> 
                 </div>

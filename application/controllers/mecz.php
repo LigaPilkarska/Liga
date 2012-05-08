@@ -6,6 +6,15 @@ class Mecz extends CI_Controller {
         public function __construct() {
             parent::__construct();
             $this->load->model('mecze_model');
+            if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
+                $this->lang->load('menu', 'english');
+                $this->lang->load('news', 'english');
+            }
+            else {
+                $this->lang->load('menu', 'polish');
+                $this->lang->load('news', 'polish');
+            }
+            $this->load->helper('language');
             //$this->id_Ligi = $this->uri->segment(3);
         }
         
@@ -16,7 +25,7 @@ class Mecz extends CI_Controller {
             $data['lang'] = 'pl';
             $data['idLigi'] = $idLigi;
             $data['mecze'] = $this->mecze_model->pobierz_mecze_ligi($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/mecze_view', $data);
@@ -33,7 +42,7 @@ class Mecz extends CI_Controller {
                 $idLigi = $mecz['idLigi'];
             }
             $data['idLigi'] = $idLigi;
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/mecze_view');

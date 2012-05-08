@@ -21,7 +21,7 @@
     </div>
                     </map>
     <div id="linki_wojewodztw">
-             Województwa:       
+             <?php echo lang('voivodship'); ?>       
              <ul id="WOJEWODZTWA">
                  <li><a href="" title="dolnośląskie">woj. dolnośląskie</a></li>
                  <li><a href="" title="kujawsko-pomorskie">woj. kujawsko-pomorskie</a></li>

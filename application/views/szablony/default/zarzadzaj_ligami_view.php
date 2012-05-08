@@ -29,11 +29,10 @@
                 echo form_open(site_url() .'/'. 'zarzadzaj/dodajLige', array('id'=>'form_dodawania_uzytk', 'class'=>'form_dodawania_uzytk'));
                     echo form_fieldset("Dodaj Ligę", array('class' => 'form_dodawania_uzytk_fieldset'));
                     $wojewodztwo_label_data = array('class' => 'errors');
-                    echo form_label('Województwo', 'wojewodztwo_input', $wojewodztwo_label_data).'<br />';
+                    echo form_label('Województwo', 'wojewodztwo_select', $wojewodztwo_label_data).'<br />';
                     
-                    $wojewodztwo_data = array('class' => 'errors', 'name' => 'wojewodztwo_input', 'id' => 'wojewodztwo_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
-                    echo form_input($wojewodztwo_data).'<br />';
+                    $options = array('dolnośląskie' => 'dolnośląskie', 'lubelskie' => 'lubelskie', 'lubuskie' => 'lubuskie', 'łódzkie' => 'łódzkie', 'małopolskie' => 'małopolskie', 'mazowieckie' => 'mazowieckie', 'podkarpackie' => 'podkarpackie', 'świętokrzyskie' => 'świętokrzyskie');
+                    echo form_dropdown('wojewodztwo_select', $options).'<br />';
                     
                     $klasa_label_data = array('class' => 'errors');
                     echo form_label('Klasa', 'klasa_select', $klasa_label_data).'<br />';
@@ -66,11 +65,10 @@
                     echo form_fieldset("Edytuj Ligę", array('class' => 'form_dodawania_uzytk_fieldset'));
                     
                     $wojewodztwo_label_data = array('class' => 'errors');
-                    echo form_label('Województwo', 'wojewodztwo_input', $wojewodztwo_label_data).'<br />';
+                    echo form_label('Województwo', 'wojewodztwo_select', $wojewodztwo_label_data).'<br />';
                     
-                    $wojewodztwo_data = array('class' => 'errors', 'name' => 'wojewodztwo_input', 'id' => 'wojewodztwo_input', 'value' => $liga['wojewodztwo'],
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
-                    echo form_input($wojewodztwo_data).'<br />';
+                    $options = array('dolnośląskie' => 'dolnośląskie', 'lubelskie' => 'lubelskie', 'lubuskie' => 'lubuskie', 'łódzkie' => 'łódzkie', 'małopolskie' => 'małopolskie', 'mazowieckie' => 'mazowieckie', 'podkarpackie' => 'podkarpackie', 'świętokrzyskie' => 'świętokrzyskie');
+                    echo form_dropdown('wojewodztwo_select', $options, $liga['wojewodztwo']).'<br />';
                     
                     $klasa_label_data = array('class' => 'errors');
                     echo form_label('Klasa', 'klasa_select', $klasa_label_data).'<br />';
@@ -81,15 +79,15 @@
                     $grupa_label_data = array('class' => 'errors');
                     echo form_label('Grupa', 'grupa_input', $grupa_label_data).'<br />';
                     
-                    $grupa_data = array('class' => 'errors', 'name' => 'grupa_input', 'id' => 'grupa_input', 'value' => $liga['grupa'],
+                    $grupa_data = array('name' => 'grupa_input', 'id' => 'grupa_input', 'value' => $liga['grupa'],
                     'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
                     echo form_input($grupa_data).'<br />';
                     
                     $rok_label_data = array('class' => 'errors');
                     echo form_label('Rok', 'rok_input', $rok_label_data).'<br />';
                     
-                    $rok_data = array('class' => 'errors', 'name' => 'rok_input', 'id' => 'rok_input', 'value' => $liga['rok'],
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    $rok_data = array('class' => 'errors', 'name' => 'rok_input', 'id' => 'rok_input',
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'value' => $liga['rok']);
                     echo form_input($rok_data).'<br />';
                     
                     echo '<br /><br />';

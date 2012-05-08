@@ -6,6 +6,15 @@ class Zawodnik extends CI_Controller {
             parent::__construct();
             $this->load->model('zawodnicy_model');
             $this->load->model('druzyny_model');
+            if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
+                $this->lang->load('menu', 'english');
+                $this->lang->load('news', 'english');
+            }
+            else {
+                $this->lang->load('menu', 'polish');
+                $this->lang->load('news', 'polish');
+            }
+            $this->load->helper('language');
             
         }
         

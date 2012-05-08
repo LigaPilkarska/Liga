@@ -57,6 +57,25 @@
                     'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
                     echo form_input($email_data).'<br />';
                     
+                    //echo '<div id="liga_div" class="visible:none">';
+                        $wojewodztwo_label_data = array('class' => 'errors');
+                        echo form_label('Województwo', 'wojewodztwo_select', $wojewodztwo_label_data).'<br />';
+
+                        $options = array('dolnośląskie' => 'dolnośląskie', 'lubelskie' => 'lubelskie', 'lubuskie' => 'lubuskie', 'łódzkie' => 'łódzkie', 'małopolskie' => 'małopolskie', 'mazowieckie' => 'mazowieckie', 'podkarpackie' => 'podkarpackie', 'świętokrzyskie' => 'świętokrzyskie');
+                        echo form_dropdown('wojewodztwo_select', $options).'<br />';
+
+                        $klasa_label_data = array('class' => 'errors');
+                        echo form_label('Klasa', 'klasa_select', $klasa_label_data).'<br />';
+
+                        $options = array('okręgowa' => 'okręgowa', 'A' => 'A', 'B' => 'B', 'C' => 'C');
+                        echo form_dropdown('klasa_select', $options).'<br />';
+
+                        $grupa_label_data = array('class' => 'errors');
+                        echo form_label('Grupa', 'grupa_select', $grupa_label_data).'<br />';
+
+                        $options = array();
+                        echo form_dropdown('grupa_select', $options).'<br />';
+                    //echo '</div>';
                     /*$ligi_label_data = array('class' => 'errors');
                     echo form_label('Liga', 'ligi_select', $ligi_label_data).'<br />';
                     

@@ -17,6 +17,15 @@ class Zarzadzaj extends CI_Controller {
             $this->load->model('uzytkownicy_model');
             $this->load->model('ligi_model');
             $this->load->model('druzyny_model');
+            if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
+                $this->lang->load('menu', 'english');
+                $this->lang->load('news', 'english');
+            }
+            else {
+                $this->lang->load('menu', 'polish');
+                $this->lang->load('news', 'polish');
+            }
+            $this->load->helper('language');
             
         }
         
@@ -25,7 +34,7 @@ class Zarzadzaj extends CI_Controller {
             $data['description'] = 'To jest przykładowy opis.';
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_view');
@@ -38,7 +47,7 @@ class Zarzadzaj extends CI_Controller {
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['uzytkownicy'] = $this->uzytkownicy_model->dajUzytkownikow($this->session->userdata('konto_id'));
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_uzytk_view');
@@ -55,7 +64,7 @@ class Zarzadzaj extends CI_Controller {
             $data['druzyny'] = $this->druzyny_model->dajWszystkieDruzyny();
             
                 $data['uzytkownik'] = $this->uzytkownicy_model->dajUzytkownika($idKonta);
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_uzytk_view');
@@ -88,7 +97,7 @@ class Zarzadzaj extends CI_Controller {
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['ligi'] = $this->ligi_model->pobierz_ligi();
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_ligami_view');
@@ -104,7 +113,7 @@ class Zarzadzaj extends CI_Controller {
            // $data['druzyny'] = $this->druzyny_model->dajWszystkieDruzyny();
             
             $data['liga'] = $this->ligi_model->dajLige($idLigi);
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_ligami_view');
@@ -112,7 +121,7 @@ class Zarzadzaj extends CI_Controller {
         }
         
         function dodajLige(){
-            $wojewodztwo = $this->input->post('wojewodztwo_input');
+            $wojewodztwo = $this->input->post('wojewodztwo_select');
             $klasa = $this->input->post('klasa_select');
             $grupa = $this->input->post('grupa_input');
             $rok = $this->input->post('rok_input');
@@ -121,7 +130,7 @@ class Zarzadzaj extends CI_Controller {
         }
         
         function edytujLige($idLigi){
-            $wojewodztwo = $this->input->post('wojewodztwo_input');
+            $wojewodztwo = $this->input->post('wojewodztwo_select');
             $klasa = $this->input->post('klasa_select');
             $grupa = $this->input->post('grupa_input');
             $rok = $this->input->post('rok_input');
@@ -139,7 +148,7 @@ class Zarzadzaj extends CI_Controller {
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny_model->dajWszystkieDruzyny();
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_druz_view');
@@ -152,7 +161,7 @@ class Zarzadzaj extends CI_Controller {
             $data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
             $data['lang'] = 'pl';            
             $data['druzyna'] = $this->druzyny_model->dajDruzyne($idDruzyny);
-            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>'Informacje o stronie', 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
+            $data['opcje'] = array('main/index'=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/index'=>'Ligi', 'main/2'=>'Kontakt');
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/zarzadzaj_druz_view');
@@ -163,8 +172,20 @@ class Zarzadzaj extends CI_Controller {
             $nazwa = $this->input->post('nazwa_input');
             $prezes = $this->input->post('prezes_input');
             $stadion = $this->input->post('stadion_input');
-            $this->druzyny_model->dodajDruzyne($nazwa, $prezes, $stadion);
+            $liga = $this->input->post('grupa_select');
+            $this->druzyny_model->dodajDruzyne($nazwa, $prezes, $stadion, $liga);
             redirect(base_url().'index.php/zarzadzaj/druzyny');
+        }
+        
+        function dajListeGrup($woj, $klasa){
+            //$data['title'] = 'Panel Administracyjny - dodaj/usuń drużynę';
+            //$data['description'] = 'To jest przykładowy opis.';
+            //$data['keywords'] = array('klucz1', 'klucz2', 'klucz3');
+            //$data['lang'] = 'pl'; 
+            //echo $woj;
+            $data['grupy'] = $this->druzyny_model->dajListeGrup(urldecode($woj), urldecode($klasa));
+            //$this->load->view('szablony/default/header', $data);
+            $this->load->view('szablony/default/lista_grup_view', $data);
         }
         
         function edytujDruzyne($idDruzyny){
