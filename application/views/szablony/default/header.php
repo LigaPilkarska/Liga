@@ -47,10 +47,10 @@ echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
                 <div id="NAGLOWEK_PRAWO_TOP">
                     <table>
                         <tr>
-                            <td><?php echo anchor('/', 'Główna') ?></td>
-                            <td><?php echo anchor('#', 'Szukaj') ?></td>
-                            <td><?php echo anchor('liga/index', 'Ligi') ?></td>
-                            <td><?php echo anchor('#', 'Kontakt') ?></td>
+                            <td><?php echo anchor('/', lang('main')) ?></td>
+                            <td><?php echo anchor('#', lang('search')) ?></td>
+                            <td><?php echo anchor('liga/index', lang('leagues')) ?></td>
+                            <td><?php echo anchor('#', lang('contact')) ?></td>
                             <td><img title="pl" class="sitelang" style="width: 40px; height: 30px" src="<?php echo base_url(); ?>szablony/default/images/pl.png" /></td>
                                 <td><img title="eng" class="sitelang" style="width: 50px; height: 25px" src="<?php echo base_url(); ?>szablony/default/images/usa.png" /></td>
                         </tr>
@@ -61,11 +61,11 @@ echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
                 </div>
                 <div id="NAGLOWEK_PRAWO_BOTTOM">
                     <ul>
-                        <li><?php echo anchor('/', 'Główna') ?></li>
-                        <li><a href="#">O nas</a></li>
-                        <li><?php echo anchor('liga/index', 'Ligi') ?></li>
-                        <li><a href="#">Zareklamuj się</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><?php echo anchor('/', lang('main')) ?></li>
+                        <li><a href="#"><?php echo lang('about')?></a></li>
+                        <li><?php echo anchor('liga/index', lang('leagues')) ?></li>
+                        <li><a href="#"><?php echo lang('ad')?></a></li>
+                        <li><a href="#"><?php lang('contact')?></a></li>
                     </ul>
                 </div>
             </div>

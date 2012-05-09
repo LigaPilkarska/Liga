@@ -11,10 +11,12 @@ class Main extends CI_Controller {
             if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
                 $this->lang->load('menu', 'english');
                 $this->lang->load('news', 'english');
+                $this->lang->load('header', 'english');
             }
             else {
                 $this->lang->load('menu', 'polish');
                 $this->lang->load('news', 'polish');
+                $this->lang->load('header', 'polish');
             }
             $this->load->helper('language');
         }

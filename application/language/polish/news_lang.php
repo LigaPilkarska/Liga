@@ -14,5 +14,5 @@ $lang['news_commentauthor'] = "Autor";
 $lang['news_comment'] = "Komentarz";
 $lang['news_commentbutton'] = "Dodaj komentarz";
 
-$lang['voivodship'] = "Województwa: ";
+$lang['voivodship'] = "Województwo";
 ?>

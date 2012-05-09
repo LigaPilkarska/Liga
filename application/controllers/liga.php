@@ -10,10 +10,12 @@ class Liga extends CI_Controller {
             if(isset($_COOKIE['sitelang']) && $_COOKIE['sitelang']=='eng'){
                 $this->lang->load('menu', 'english');
                 $this->lang->load('news', 'english');
+                $this->lang->load('header', 'english');
             }
             else {
                 $this->lang->load('menu', 'polish');
                 $this->lang->load('news', 'polish');
+                $this->lang->load('header', 'polish');
             }
             $this->load->helper('language');
         }
@@ -43,7 +45,7 @@ class Liga extends CI_Controller {
             $data['wpisy'] = $this->wpisy_model->pobierz_newsy('liga', $idLigi);
             $data['wpisy2'] = $this->wpisy_model->pobierz_newsy2('liga', $idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>lang('menu_option_news'), 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>lang('menu_option_teams'), 'mecz/mecze_ligi/'.$idLigi=>lang('menu_option_matches'), 'liga/tabela/'.$idLigi=>lang('menu_option_table'));
             $this->load->view('szablony/default/header', $data);
             
             $this->load->view('szablony/default/menu');
@@ -60,7 +62,7 @@ class Liga extends CI_Controller {
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny_model->pobierzDruzyny($idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>lang('menu_option_news'), 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>lang('menu_option_teams'), 'mecz/mecze_ligi/'.$idLigi=>lang('menu_option_matches'), 'liga/tabela/'.$idLigi=>lang('menu_option_table'));
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');
@@ -75,7 +77,7 @@ class Liga extends CI_Controller {
             $data['lang'] = 'pl';
             $data['druzyny'] = $this->druzyny_model->pobierzTabele($idLigi);
             $data['nazwa'] = $this->ligi_model->pobierzDane($idLigi);
-            $data['opcje'] = array('liga/wybor/'.$idLigi=>'Newsy', 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>'Drużyny', 'mecz/mecze_ligi/'.$idLigi=>'Mecze', 'liga/tabela/'.$idLigi=>'Tabela');
+            $data['opcje'] = array('liga/wybor/'.$idLigi=>lang('menu_option_news'), 'main/1'=>lang('menu_option_info'), 'liga/druzyny/'.$idLigi=>lang('menu_option_teams'), 'mecz/mecze_ligi/'.$idLigi=>lang('menu_option_matches'), 'liga/tabela/'.$idLigi=>lang('menu_option_table'));
             $this->load->view('szablony/default/header', $data);
             $this->load->view('szablony/default/menu');
             $this->load->view('szablony/default/liga_view');

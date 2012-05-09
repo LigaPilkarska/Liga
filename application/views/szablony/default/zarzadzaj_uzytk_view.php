@@ -1,5 +1,5 @@
 <div id="TYTUL_STRONY">
-    <h2>Panel Administracyjny - Użytkownicy</h2>
+    <h2><?php echo lang('panel_user')?></h2>
 </div>
 <div id="TRESC">
     <?php $czyAdmin = $this->session->userdata('uprawnienie');
@@ -10,7 +10,7 @@
         else { 
             if($this->uri->segment(2)=='uzytkownicy') {?>
                 <table border=1 cellpadding=5 rules='all'>
-                    <tr><th>ID</th><th>Login</th><th>Uprawnienie</th><th>E-mail</th><!--<th>Liga</th><th>Drużyna</th>--><th>Opcje</th></tr>
+                    <tr><th>ID</th><th>Login</th><th><?php echo lang('authorizathion') ?></th><th>E-mail</th><!--<th>Liga</th><th>Drużyna</th>--><th><?php echo lang('options') ?></th></tr>
                     <?php 
                     foreach ($uzytkownicy as $uzytk){
                         echo '<tr>';
@@ -24,11 +24,11 @@
                         echo '</tr>';
                     }
                  echo '</table>';
-                 echo '<br />'.anchor(site_url().'/zarzadzaj/uzytkownik/-1', 'Dodaj użytkownika =)');
+                 echo '<br />'.anchor(site_url().'/zarzadzaj/uzytkownik/-1', lang('add_user'));
             }
             elseif($this->uri->segment(2)=='uzytkownik' && $this->uri->segment(3)==-1){
                 echo form_open(site_url() .'/'. 'zarzadzaj/dodajUzytk', array('id'=>'form_dodawania_uzytk', 'class'=>'form_dodawania_uzytk'));
-                    echo form_fieldset("Dodaj Użytkownika", array('class' => 'form_dodawania_uzytk_fieldset'));
+                    echo form_fieldset(lang('add_user'), array('class' => 'form_dodawania_uzytk_fieldset'));
                     //echo '<p>';
                     $login_label_data = array('class' => 'errors');
                     echo form_label('Login', 'login_input', $login_label_data).'<br />';
@@ -38,14 +38,14 @@
                     echo form_input($login_data).'<br />';
                     
                     $password_label_data = array('class' => 'errors');
-                    echo form_label('Hasło', 'password_input', $password_label_data).'<br />';
+                    echo form_label(lang('menu_login_pass'), 'password_input', $password_label_data).'<br />';
                     
                     $password_data = array('name' => 'password_input', 'id' => 'password_input',
                     'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
                     echo form_password($password_data).'<br />';
                     
                     $uprawnienie_label_data = array('class' => 'errors');
-                    echo form_label('Uprawnienie', 'uprawnienie_select', $uprawnienie_label_data).'<br />';
+                    echo form_label(lang('authorizathion'), 'uprawnienie_select', $uprawnienie_label_data).'<br />';
                     
                     $options = array('kibic' => 'kibic', 'trener' => 'trener', 'admin' => 'admin', 'admin_global' => 'admin_global');
                     echo form_dropdown('uprawnienie_select', $options).'<br />';
@@ -59,19 +59,19 @@
                     
                     //echo '<div id="liga_div" class="visible:none">';
                         $wojewodztwo_label_data = array('class' => 'errors');
-                        echo form_label('Województwo', 'wojewodztwo_select', $wojewodztwo_label_data).'<br />';
+                        echo form_label(lang('voicodship'), 'wojewodztwo_select', $wojewodztwo_label_data).'<br />';
 
                         $options = array('dolnośląskie' => 'dolnośląskie', 'lubelskie' => 'lubelskie', 'lubuskie' => 'lubuskie', 'łódzkie' => 'łódzkie', 'małopolskie' => 'małopolskie', 'mazowieckie' => 'mazowieckie', 'podkarpackie' => 'podkarpackie', 'świętokrzyskie' => 'świętokrzyskie');
                         echo form_dropdown('wojewodztwo_select', $options).'<br />';
 
                         $klasa_label_data = array('class' => 'errors');
-                        echo form_label('Klasa', 'klasa_select', $klasa_label_data).'<br />';
+                        echo form_label(lang('class'), 'klasa_select', $klasa_label_data).'<br />';
 
                         $options = array('okręgowa' => 'okręgowa', 'A' => 'A', 'B' => 'B', 'C' => 'C');
                         echo form_dropdown('klasa_select', $options).'<br />';
 
                         $grupa_label_data = array('class' => 'errors');
-                        echo form_label('Grupa', 'grupa_select', $grupa_label_data).'<br />';
+                        echo form_label(lang('group'), 'grupa_select', $grupa_label_data).'<br />';
 
                         $options = array();
                         echo form_dropdown('grupa_select', $options).'<br />';
@@ -83,7 +83,7 @@
                     echo form_dropdown('ligi_select', $options, array(), 'style=width:50%');*/
                     
                     echo '<br /><br />';
-                    echo form_submit('dodaj', 'Dodaj Użytkownika');
+                    echo form_submit('dodaj', lang('add_user'));
                     echo form_fieldset_close();
                     //echo '</p>';
                     echo form_close();
@@ -91,7 +91,7 @@
             elseif($this->uri->segment(2)=='uzytkownik' && $this->uri->segment(3)!=-1) {
                 foreach($uzytkownik as $uzytkownik){
                     echo form_open(site_url() .'/'. 'zarzadzaj/edytujUzytk/'.$this->uri->segment(3), array('id'=>'form_dodawania_uzytk', 'class'=>'form_dodawania_uzytk'));
-                    echo form_fieldset("Edytuj Użytkownika", array('class' => 'form_dodawania_uzytk_fieldset'));
+                    echo form_fieldset(lang('edit_user'), array('class' => 'form_dodawania_uzytk_fieldset'));
                     //echo '<p>';
                     $login_label_data = array('class' => 'errors');
                     echo form_label('Login', 'login_input', $login_label_data).'<br />';
@@ -101,7 +101,7 @@
                     echo form_input($login_data).'<br />';
                     
                     $uprawnienie_label_data = array('class' => 'errors');
-                    echo form_label('Uprawnienie', 'uprawnienie_select', $uprawnienie_label_data).'<br />';
+                    echo form_label(lang('authorizathion'), 'uprawnienie_select', $uprawnienie_label_data).'<br />';
                     
                     $options = array('kibic' => 'kibic', 'trener' => 'trener', 'admin' => 'admin', 'admin_global' => 'admin_global');
                     echo form_dropdown('uprawnienie_select', $options, $uzytkownik['uprawnienie']).'<br />';
@@ -120,7 +120,7 @@
                     echo form_dropdown('ligi_select', $options, array(), 'style=width:50%');*/
                     
                     echo '<br /><br />';
-                    echo form_submit('edytuj', 'Aktualizuj Użytkownika');
+                    echo form_submit('edytuj', lang('edit_user'));
                     echo form_fieldset_close();
                     //echo '</p>';
                     echo form_close();
