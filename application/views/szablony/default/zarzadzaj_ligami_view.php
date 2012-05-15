@@ -44,14 +44,14 @@
                     echo form_label(lang('group'), 'grupa_input', $grupa_label_data).'<br />';
                     
                     $grupa_data = array('name' => 'grupa_input', 'id' => 'grupa_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'required'=>'required');
                     echo form_input($grupa_data).'<br />';
                     
                     $rok_label_data = array('class' => 'errors');
                     echo form_label(lang('year'), 'rok_input', $rok_label_data).'<br />';
                     
                     $rok_data = array('class' => 'errors', 'name' => 'rok_input', 'id' => 'rok_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'required'=>'required');
                     echo form_input($rok_data).'<br />';
                     
                     echo '<br /><br />';

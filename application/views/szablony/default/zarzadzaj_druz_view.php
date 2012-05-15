@@ -31,21 +31,21 @@
                     echo form_label(lang('name'), 'nazwa_input', $nazwa_label_data).'<br />';
                     
                     $nazwa_data = array('class' => 'errors', 'name' => 'nazwa_input', 'id' => 'nazwa_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%', 'required'=>'required');
                     echo form_input($nazwa_data).'<br />';
                            
                     $prezes_label_data = array('class' => 'errors');
                     echo form_label(lang('president'), 'prezes_input', $prezes_label_data).'<br />';
                     
                     $prezes_data = array('name' => 'prezes_input', 'id' => 'prezes_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%', 'required'=>'required');
                     echo form_input($prezes_data).'<br />';
                     
                     $stadion_label_data = array('class' => 'errors');
                     echo form_label(lang('stadium'), 'stadion_input', $stadion_label_data).'<br />';
                     
                     $stadion_data = array('class' => 'errors', 'name' => 'stadion_input', 'id' => 'stadion_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:40%', 'required'=>'required');
                     echo form_input($stadion_data).'<br />';
                     
                     $wojewodztwo_label_data = array('class' => 'errors');

@@ -34,14 +34,14 @@
                     echo form_label('Login', 'login_input', $login_label_data).'<br />';
                     
                     $login_data = array('class' => 'errors', 'name' => 'login_input', 'id' => 'login_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'required'=>'required');
                     echo form_input($login_data).'<br />';
                     
                     $password_label_data = array('class' => 'errors');
                     echo form_label(lang('menu_login_pass'), 'password_input', $password_label_data).'<br />';
                     
                     $password_data = array('name' => 'password_input', 'id' => 'password_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'required'=>'required');
                     echo form_password($password_data).'<br />';
                     
                     $uprawnienie_label_data = array('class' => 'errors');
@@ -54,7 +54,7 @@
                     echo form_label('Email', 'email_input', $email_label_data).'<br />';
                     
                     $email_data = array('class' => 'errors', 'name' => 'email_input', 'id' => 'email_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:20%', 'required'=>'required');
                     echo form_input($email_data).'<br />';
                     
                     //echo '<div id="liga_div" class="visible:none">';

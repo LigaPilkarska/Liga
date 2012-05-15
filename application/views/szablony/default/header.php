@@ -27,8 +27,40 @@ echo '<'.'?xml version="1.0" encoding="utf-8"?'.'>'."\n"; ?>
 
     <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>forms_view/assets/js/jquery.formalize.js" type="text/javascript"></script>
-    
-    
+    <script src="<?php echo base_url(); ?>szablony/js/wykres.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+    // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+     function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        
+        var x = $('.daneWykresDruzyna');
+        var y = $('.daneWykresPunkty');
+        $(x).each( function(i) {
+            data.addRow([$(x[i]).text(), parseInt($(y[i]).text())]);
+        });
+        
+        // Set chart options
+        var options = {'title':'Rozkład punktów w lidze',
+                       'width':600,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
     
     <script src="<?php echo base_url(); ?>szablony/js/glowny.js" type="text/javascript">
        

@@ -212,6 +212,7 @@
         );
     })
 
+
 	$('.sitelang').click(function(){
               
             var x = $(this).attr('title');
@@ -223,4 +224,11 @@
                 });
         });
     
+    
+    
+     
+
+    
     });
+    
+    

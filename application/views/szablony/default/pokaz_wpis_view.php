@@ -29,7 +29,8 @@
                             
                         </div>
                         <div class="news_author_data"><?php echo lang('news_author'); ?> <?=$wpis['autor'] ?>
-                        <?php if(isset($czyAdmin) && ($czyAdmin=='admin_global' || 
+                        <?php $czyAdmin = $this->session->userdata('uprawnienie');
+                        if(isset($czyAdmin) && ($czyAdmin=='admin_global' || 
                             ($czyAdmin=='admin' && isset($idLigi) && $idLigi == $this->session->userdata('liga')) || 
                             ($czyAdmin=='trener' && isset($idDruzyny) && $idDruzyny == $this->session->userdata('druzyna'))))
                           echo '<a href="'.base_url() .'index.php/'. 'main/edytujKomentarz/'.$wpis['idKomentarza'].'"><img src="'.base_url().'szablony/default/images/b_edit.png" /></a> <a href="'.$wpis['idKomentarza'].'" alt="'.$wpis['idWpisu'].'" class="usun_kom"><img src="'.base_url().'szablony/default/images/b_del.png" /></a>'; ?>

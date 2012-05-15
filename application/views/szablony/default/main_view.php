@@ -17,7 +17,7 @@
                     echo form_label(lang('news_addnews_title'), 'login_input', $login_label_data).'<br />';
                     
                     $login_data = array('class' => 'errors', 'name' => 'login_input', 'id' => 'login_input',
-                    'maxlength' => '100', 'size' => '50', 'style' => 'width:60%');
+                    'maxlength' => '100', 'size' => '50', 'style' => 'width:60%', 'required'=>'required');
                     echo form_input($login_data).'<br />';
                     
                               
@@ -25,7 +25,7 @@
                     echo form_label(lang('news_addnews_text'), 'email_input', $email_label_data).'<br />';
                     
                     $email_data = array('class' => 'errors', 'name' => 'email_input', 'id' => 'email_input',
-                     'size' => '50', 'style' => 'width:80%; height:80px');
+                     'size' => '50', 'style' => 'width:80%; height:80px', 'required'=>'required');
                     echo form_textarea($email_data).'<br />';
   
                     echo '<br /><br />';
